@@ -1,0 +1,19 @@
+{
+  "name": "project-db",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "snap-test db role",
+  "default_attributes": {
+    "iptables-standard": {
+      "allowed_incoming_ports": {
+        "mailcatcher": "1080"
+      }
+    }
+  },
+  "run_list": [
+    "recipe[config-driven-helper::iptables-standard]",
+    "recipe[mailcatcher-ng]",
+    "recipe[mailcatcher-ng::postfix]",
+    "role[php56-development]"
+  ]
+}

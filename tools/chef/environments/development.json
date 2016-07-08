@@ -1,0 +1,55 @@
+{
+  "name": "development",
+  "description": "",
+  "json_class": "Chef::Environment",
+  "chef_type": "environment",
+
+  "default_attributes": {
+    "nginx": {
+      "sites": {
+        "snap-test": {
+          "inherits": "magento",
+          "server_name": "snap-test.dev",
+          "docroot": "/vagrant/public",
+          "capistrano": false,
+          "magento": {
+            "db": {
+              "username": "magento",
+              "database": "magentodb"
+            }
+          },
+          "php_server_variables": {
+            "MAGE_IS_DEVELOPER_MODE": 1
+          }
+        }
+      }
+    },
+    "mysql": {
+      "allow_remote_root": true,
+      "bind_address": "0.0.0.0",
+      "users": {
+        "magento": {
+          "database_name": "magentodb"
+        }
+      }
+    },
+    "iptables-standard": {
+      "allowed_incoming_ports": {"mysql": "mysql"}
+    },
+    "packages": [ "git" ],
+    "yum-cron": {
+      "cleanday": 9
+    }
+  },
+
+  "override_attributes": {
+    "capistrano": {
+      "group": false
+    },
+    "data-bag-merge": {
+      "environments": {
+        "encrypted": false
+      }
+    }
+  }
+}

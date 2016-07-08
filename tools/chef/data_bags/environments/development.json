@@ -1,0 +1,38 @@
+{
+  "id": "development",
+  "default_attributes": {
+    "mysql": {
+      "server_root_password": "984C42CF342f7j6",
+      "server_repl_password": "984C42CF342f7j6",
+      "server_debian_password": "984C42CF342f7j6",
+      "connections": {
+        "default": {
+          "password": "984C42CF342f7j6"
+        }
+      },
+      "users": {
+        "magento": {
+          "password": "magento"
+        }
+      }
+    },
+    "nginx": {
+      "sites": {
+        "snap-test": {
+          "magento": {
+            "app": {
+              "crypt_key": "fIf5yowN8eB9Wal5huM1ceaS3E3op7aU"
+            },
+            "db": {
+              "password": "magento"
+            }
+          }
+        }
+      }
+    },
+    "ssl_certs": {
+      "/etc/pki/tls/certs/cert.pem": "-----BEGIN CERTIFICATE-----\nMIIEZzCCA0+gAwIBAgIBADANBgkqhkiG9w0BAQUFADCBgjELMAkGA1UEBhMCVUsx\nCTAHBgNVBAgMADEPMA0GA1UECgwGSW52aXFhMQ8wDQYDVQQHDAZMb25kb24xGDAW\nBgNVBAMMDyouc25hcC10ZXN0LmRldjEJMAcGA1UECwwAMSEwHwYJKoZIhvcNAQkB\nFhJzdXBwb3J0QGludmlxYS5jb20wHhcNMTYwNzA4MTIwMDU5WhcNMTcwNzA4MTIw\nMDU5WjCBgjELMAkGA1UEBhMCVUsxCTAHBgNVBAgMADEPMA0GA1UECgwGSW52aXFh\nMQ8wDQYDVQQHDAZMb25kb24xGDAWBgNVBAMMDyouc25hcC10ZXN0LmRldjEJMAcG\nA1UECwwAMSEwHwYJKoZIhvcNAQkBFhJzdXBwb3J0QGludmlxYS5jb20wggEiMA0G\nCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDNj5r1yTFuKn5jWRtToh4fEPSsmf90\n1mhwOPWjTnOVq/itpjBvxOhrayCrGeTA9PgynZHxg3uGRBa8DprYEJx7tF66vwge\njBGfRo3LTnnXpC5luqYx0XjRkPabZQqVEkjcgx5C59HeHt+Wn/esazILHZyA6Z5x\nmjWBv/Apf5M+bQN9i74GqnNYG0jwtArYal5bzSJhoGUSV+QiudwPwAXcPWN7dZ2i\nWQ55k48T6gQdpjdb+XrIZemKALDAwDaw23R6QuiD2PANA7Pe3uZis229XMWgQzSI\ns+pHSAyU7xsQyIN/aeLxgpeIFH75o5mSy8HOv7/9GHeqLXFTGBnKfk2JAgMBAAGj\ngeUwgeIwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUr9Y53yvfK5zlf16QeFvQ\nKOQw3a4wga8GA1UdIwSBpzCBpIAUr9Y53yvfK5zlf16QeFvQKOQw3a6hgYikgYUw\ngYIxCzAJBgNVBAYTAlVLMQkwBwYDVQQIDAAxDzANBgNVBAoMBkludmlxYTEPMA0G\nA1UEBwwGTG9uZG9uMRgwFgYDVQQDDA8qLnNuYXAtdGVzdC5kZXYxCTAHBgNVBAsM\nADEhMB8GCSqGSIb3DQEJARYSc3VwcG9ydEBpbnZpcWEuY29tggEAMA0GCSqGSIb3\nDQEBBQUAA4IBAQBgHVK8UDT2gB8u6IJMC/VhLmugOjm63CzMVKF5JeKS7FN1fuin\nHDuBH2wmuhEk6548yHoAyRSHr6AtokPlvf+UVWhiHg+CY1ewybHg+hilKI41b0+d\n/qOnLEXu5qNLz5DNjspT3RFzz/fNSGbVgT24RuRFxAjkQSz8evue54Hyz0yQh0ui\nKxzqnC3B2OLJEAmXfAmn4/r/LuI2YHNslrxqj2nnBRvHtZy3f9MsmivM5QfNLNva\nVhinzvCAPwfM3Zuxjd/IiNoV52iccF7h8q2sGA6FumGdy0a5dBKjgP6hC8ioUjzS\n0xEeITuOsrAzMuj6VqKYyaEbPQCh5/cQP0l3\n-----END CERTIFICATE-----",
+      "/etc/pki/tls/private/key.pem": "-----BEGIN RSA PRIVATE KEY-----\nMIIEowIBAAKCAQEAzY+a9ckxbip+Y1kbU6IeHxD0rJn/dNZocDj1o05zlav4raYw\nb8Toa2sgqxnkwPT4Mp2R8YN7hkQWvA6a2BCce7Reur8IHowRn0aNy05516QuZbqm\nMdF40ZD2m2UKlRJI3IMeQufR3h7flp/3rGsyCx2cgOmecZo1gb/wKX+TPm0DfYu+\nBqpzWBtI8LQK2GpeW80iYaBlElfkIrncD8AF3D1je3WdolkOeZOPE+oEHaY3W/l6\nyGXpigCwwMA2sNt0ekLog9jwDQOz3t7mYrNtvVzFoEM0iLPqR0gMlO8bEMiDf2ni\n8YKXiBR++aOZksvBzr+//Rh3qi1xUxgZyn5NiQIDAQABAoIBAD6gtQaTULMO0Uj1\negTmDKVMZi88D/+J33HpeLVTjpWYOoC1dGZpKKKpld9rWS2MtR2+shtSAs1qaz7K\neFTB4tsxnfbpgtDDvg630TWS6D5R8CzgTAg7mMLIlsnLZAj89CPy8sJRnLg+0cIz\nZKMsWafXUrpX8wULhafNUZ9jFfpbcngnB7M2G2hPrccxVtJY0pdkXzRYqynOgean\na2+7kAPooHzJFSCd1eI40vvI+VRUOV3AOjrCe2hXDU2RrhbE6QIiLueHVU6yybME\ncmLMp9KEKpkXsE9iWkg4Dy2bRBynbSp1T8pI56NCAWHau67ZwTsmdlgy1ywdciYj\nro3gr4ECgYEA6hM2puTrANNe1TnMxZDCIt5nFVDFQkxspt04hCG/ZKwpF9zY4vmd\nYbL74lpM/nAH9f4dIaGMmcamNmmrkkrd+Jb7hqf9bfW69SYTXIBI5hMUMVYZ2JbZ\nr/1Cdu3jaj5t2Oc2vek8wNVA0VpvHK4W4SLedRfHpDldfQ9S1tfO09kCgYEA4NCq\nGLSq/Vp5/GpO7fI7/zpHxcvxpKvEmaIOmxW/gFwPeDTOA8gyWpqvC4eZPQyDZiAO\nHsb2kTruMesWmGrtI8sIFW+EAYHW7TAvDR5eCL8RFnw2MB8ABBLwEMqKsBeHvCx+\n9z2F4Z69nhwvJbpJ3wgRbf3aYR1w9XZguNGKKTECgYBx0ygHXlg8zYxXCcVe6TbO\nd/IOtnlF9R38wqSh9Ds6/FD7TqSVMybqBHxiJOE99UKZx5lo6kMR4DyhRx9sg0WP\nhfQIFhax6wWgAoT1vVg1sV9nYmQtI6X146T3alTlLDiEemLvVMT7THg5lc1kV+++\nSRN+QzMM0+x3TQVOfiEQeQKBgEoucEIQs29AAIp6paq8SHHSUEaDIiwdBZVQNROV\nXIhFWFFo0yXKVFszOVlLmBPd4im7oA0lx8xqLpjIIr+OYMtzviocjulUZ5ACWzQv\n9gVazo+l0teUExRFD3Pq8VJjoUVFRWvdoCSvlY/rat8/FgsDBYVOw1VSOqi0M/wo\nIDexAoGBAOdCgnO1xAnX+Xv1OOGYhBmFl3UMQhDvh+9yNwfzJ7/lQzV9Kngcq5nJ\n4Wgwy7OFu+Cfa8Qgw/i+gHT8nggaCYphCcY3H5LikQ8sE3B8/11KRKHCKGEe7+LW\nWKxPCuKQJL0dS4Kw3ZbUJq53wGTsXtZgdXEaJFEkN3CG02CWy1Sr\n-----END RSA PRIVATE KEY-----"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "project-web",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "snap-test web role",
+  "run_list": [
+    "recipe[data-bag-merge::environment]",
+    "recipe[config-driven-helper::iptables-standard]",
+    "role[db-mysql56-client]",
+    "role[php56]",
+    "role[web-nginx]",
+    "role[redis30]",
+    "role[memcache]",
+    "recipe[config-driven-helper::capistrano]",
+    "recipe[config-driven-helper::packages]",
+    "role[web-magento]"
+  ],
+  "default_attributes": {
+    "magento": {
+      "redis": {
+        "force_standalone": "1"
+      }
+    },
+    "packages": [ "git" ],
+    "php": {
+      "directives": {
+        "date.timezone": "Europe/London"
+      }
+    }
+  }
+}

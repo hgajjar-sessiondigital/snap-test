@@ -1,0 +1,9 @@
+{
+  "name": "project-pipeline",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "snap-test pipeline role",
+  "run_list": [
+    "recipe[yum-cron]"
+  ]
+}

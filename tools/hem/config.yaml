@@ -1,0 +1,75 @@
+---
+:name: snap-test
+:git_url: git@github.com:hgajjar-sessiondigital/snap-test
+:ref: master
+:seed:
+  :name: magento1
+  :url: git@github.com:inviqa/hem-seed-magento1
+  version: fdc68cd
+:vm_ip: 10.10.229.22
+hostname: snap-test.dev
+asset_bucket: inviqa-assets-snap-test
+vm:
+  :project_mount_path: "/vagrant"
+tmp:
+  chef_ssl:
+    :key: |-
+      -----BEGIN RSA PRIVATE KEY-----
+      MIIEowIBAAKCAQEAzY+a9ckxbip+Y1kbU6IeHxD0rJn/dNZocDj1o05zlav4raYw
+      b8Toa2sgqxnkwPT4Mp2R8YN7hkQWvA6a2BCce7Reur8IHowRn0aNy05516QuZbqm
+      MdF40ZD2m2UKlRJI3IMeQufR3h7flp/3rGsyCx2cgOmecZo1gb/wKX+TPm0DfYu+
+      BqpzWBtI8LQK2GpeW80iYaBlElfkIrncD8AF3D1je3WdolkOeZOPE+oEHaY3W/l6
+      yGXpigCwwMA2sNt0ekLog9jwDQOz3t7mYrNtvVzFoEM0iLPqR0gMlO8bEMiDf2ni
+      8YKXiBR++aOZksvBzr+//Rh3qi1xUxgZyn5NiQIDAQABAoIBAD6gtQaTULMO0Uj1
+      egTmDKVMZi88D/+J33HpeLVTjpWYOoC1dGZpKKKpld9rWS2MtR2+shtSAs1qaz7K
+      eFTB4tsxnfbpgtDDvg630TWS6D5R8CzgTAg7mMLIlsnLZAj89CPy8sJRnLg+0cIz
+      ZKMsWafXUrpX8wULhafNUZ9jFfpbcngnB7M2G2hPrccxVtJY0pdkXzRYqynOgean
+      a2+7kAPooHzJFSCd1eI40vvI+VRUOV3AOjrCe2hXDU2RrhbE6QIiLueHVU6yybME
+      cmLMp9KEKpkXsE9iWkg4Dy2bRBynbSp1T8pI56NCAWHau67ZwTsmdlgy1ywdciYj
+      ro3gr4ECgYEA6hM2puTrANNe1TnMxZDCIt5nFVDFQkxspt04hCG/ZKwpF9zY4vmd
+      YbL74lpM/nAH9f4dIaGMmcamNmmrkkrd+Jb7hqf9bfW69SYTXIBI5hMUMVYZ2JbZ
+      r/1Cdu3jaj5t2Oc2vek8wNVA0VpvHK4W4SLedRfHpDldfQ9S1tfO09kCgYEA4NCq
+      GLSq/Vp5/GpO7fI7/zpHxcvxpKvEmaIOmxW/gFwPeDTOA8gyWpqvC4eZPQyDZiAO
+      Hsb2kTruMesWmGrtI8sIFW+EAYHW7TAvDR5eCL8RFnw2MB8ABBLwEMqKsBeHvCx+
+      9z2F4Z69nhwvJbpJ3wgRbf3aYR1w9XZguNGKKTECgYBx0ygHXlg8zYxXCcVe6TbO
+      d/IOtnlF9R38wqSh9Ds6/FD7TqSVMybqBHxiJOE99UKZx5lo6kMR4DyhRx9sg0WP
+      hfQIFhax6wWgAoT1vVg1sV9nYmQtI6X146T3alTlLDiEemLvVMT7THg5lc1kV+++
+      SRN+QzMM0+x3TQVOfiEQeQKBgEoucEIQs29AAIp6paq8SHHSUEaDIiwdBZVQNROV
+      XIhFWFFo0yXKVFszOVlLmBPd4im7oA0lx8xqLpjIIr+OYMtzviocjulUZ5ACWzQv
+      9gVazo+l0teUExRFD3Pq8VJjoUVFRWvdoCSvlY/rat8/FgsDBYVOw1VSOqi0M/wo
+      IDexAoGBAOdCgnO1xAnX+Xv1OOGYhBmFl3UMQhDvh+9yNwfzJ7/lQzV9Kngcq5nJ
+      4Wgwy7OFu+Cfa8Qgw/i+gHT8nggaCYphCcY3H5LikQ8sE3B8/11KRKHCKGEe7+LW
+      WKxPCuKQJL0dS4Kw3ZbUJq53wGTsXtZgdXEaJFEkN3CG02CWy1Sr
+      -----END RSA PRIVATE KEY-----
+    :cert: |-
+      -----BEGIN CERTIFICATE-----
+      MIIEZzCCA0+gAwIBAgIBADANBgkqhkiG9w0BAQUFADCBgjELMAkGA1UEBhMCVUsx
+      CTAHBgNVBAgMADEPMA0GA1UECgwGSW52aXFhMQ8wDQYDVQQHDAZMb25kb24xGDAW
+      BgNVBAMMDyouc25hcC10ZXN0LmRldjEJMAcGA1UECwwAMSEwHwYJKoZIhvcNAQkB
+      FhJzdXBwb3J0QGludmlxYS5jb20wHhcNMTYwNzA4MTIwMDU5WhcNMTcwNzA4MTIw
+      MDU5WjCBgjELMAkGA1UEBhMCVUsxCTAHBgNVBAgMADEPMA0GA1UECgwGSW52aXFh
+      MQ8wDQYDVQQHDAZMb25kb24xGDAWBgNVBAMMDyouc25hcC10ZXN0LmRldjEJMAcG
+      A1UECwwAMSEwHwYJKoZIhvcNAQkBFhJzdXBwb3J0QGludmlxYS5jb20wggEiMA0G
+      CSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDNj5r1yTFuKn5jWRtToh4fEPSsmf90
+      1mhwOPWjTnOVq/itpjBvxOhrayCrGeTA9PgynZHxg3uGRBa8DprYEJx7tF66vwge
+      jBGfRo3LTnnXpC5luqYx0XjRkPabZQqVEkjcgx5C59HeHt+Wn/esazILHZyA6Z5x
+      mjWBv/Apf5M+bQN9i74GqnNYG0jwtArYal5bzSJhoGUSV+QiudwPwAXcPWN7dZ2i
+      WQ55k48T6gQdpjdb+XrIZemKALDAwDaw23R6QuiD2PANA7Pe3uZis229XMWgQzSI
+      s+pHSAyU7xsQyIN/aeLxgpeIFH75o5mSy8HOv7/9GHeqLXFTGBnKfk2JAgMBAAGj
+      geUwgeIwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUr9Y53yvfK5zlf16QeFvQ
+      KOQw3a4wga8GA1UdIwSBpzCBpIAUr9Y53yvfK5zlf16QeFvQKOQw3a6hgYikgYUw
+      gYIxCzAJBgNVBAYTAlVLMQkwBwYDVQQIDAAxDzANBgNVBAoMBkludmlxYTEPMA0G
+      A1UEBwwGTG9uZG9uMRgwFgYDVQQDDA8qLnNuYXAtdGVzdC5kZXYxCTAHBgNVBAsM
+      ADEhMB8GCSqGSIb3DQEJARYSc3VwcG9ydEBpbnZpcWEuY29tggEAMA0GCSqGSIb3
+      DQEBBQUAA4IBAQBgHVK8UDT2gB8u6IJMC/VhLmugOjm63CzMVKF5JeKS7FN1fuin
+      HDuBH2wmuhEk6548yHoAyRSHr6AtokPlvf+UVWhiHg+CY1ewybHg+hilKI41b0+d
+      /qOnLEXu5qNLz5DNjspT3RFzz/fNSGbVgT24RuRFxAjkQSz8evue54Hyz0yQh0ui
+      KxzqnC3B2OLJEAmXfAmn4/r/LuI2YHNslrxqj2nnBRvHtZy3f9MsmivM5QfNLNva
+      VhinzvCAPwfM3Zuxjd/IiNoV52iccF7h8q2sGA6FumGdy0a5dBKjgP6hC8ioUjzS
+      0xEeITuOsrAzMuj6VqKYyaEbPQCh5/cQP0l3
+      -----END CERTIFICATE-----
+  mysql_root_password: 984C42CF342f7j6
+  mysql_repl_password: 984C42CF342f7j6
+  mysql_debian_password: 984C42CF342f7j6
+:magento_edition: community
+:magento_version: 1.9.2.4
