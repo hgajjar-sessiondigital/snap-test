@@ -1,6 +1,6 @@
-set :deploy_to, "/var/www/" + "uat_domain"
-set :branch, "develop"
+set :deploy_to, "/srv/www/snap-test"
+set :branch, "master"
 set :keep_releases, 5
 
-server "user@uat_domain", :app, :primary => true
+server "testing-heidelberg.jarlssen.de", :app, :primary => true
 # set :gateway, "user@host" # Use if you need to bounce through another server
