@@ -1,5 +1,5 @@
 set :deploy_to, "/srv/www/snap-test"
-set :branch, "master"
+set :branch, "develop"
 set :keep_releases, 5
 
 server "testing-heidelberg.jarlssen.de", :app, :primary => true
