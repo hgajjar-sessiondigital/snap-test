@@ -5,10 +5,10 @@ require 'capistrano/ext/multistage'
 require 'inviqa_cap/composer'
 require 'magento/magerun'
 
-set :repository, "git@localhost:hgajjar-sessiondigital/snap-test"
+set :repository, "git@github.com:hgajjar-sessiondigital/snap-test"
 set :scm, :git
 set :user, "hgajjar"
-set :deploy_via, :remote_cache
+set :deploy_via, :copy
 set :use_sudo, false
 set :keep_releases, 5
 
