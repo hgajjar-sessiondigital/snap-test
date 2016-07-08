@@ -8,7 +8,7 @@ require 'magento/magerun'
 set :repository, "git@github.com:hgajjar-sessiondigital/snap-test"
 set :scm, :git
 set :user, "hgajjar"
-set :deploy_via, :copy
+set :deploy_via, :remote_cache
 set :use_sudo, false
 set :keep_releases, 5
 
