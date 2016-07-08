@@ -5,8 +5,7 @@ module InviqaCap
     def self.load_into(config)
       config.load do
         after "deploy:setup", "inviqa:setup"
-        after "deploy:setup", "inviqa:composer:setup"
-
+        
         before "deploy:create_symlink", "inviqa:symlink"
         after "deploy:finalize_update", "deploy:cleanup"
 
