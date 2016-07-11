@@ -3,6 +3,7 @@ set :default_stage, "dev"
 
 require 'capistrano/ext/multistage'
 require 'inviqa_cap/composer'
+require 'inviqa_cap/assets'
 
 set :repository, "git@github.com:hgajjar-sessiondigital/snap-test"
 set :scm, :git
