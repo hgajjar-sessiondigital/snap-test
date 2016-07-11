@@ -3,5 +3,6 @@ load 'deploy'
 
 require 'railsless-deploy'
 require 'inviqa_cap/linked'
+require 'inviqa_cap/composer'
 
 load 'config/deploy'

@@ -19,5 +19,5 @@ module InviqaCap
 end
 
 if Capistrano::Configuration.instance
-  InviqaCap::Composer.load_into(Capistrano::Configuration.instance)
+  InviqaCap::Assets.load_into(Capistrano::Configuration.instance)
 end
