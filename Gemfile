@@ -12,6 +12,7 @@ gem "railsless-deploy", "~> 1.1"
 
 # Magento
 gem "magentify", "~> 0.0.7"
+gem "compass", "~> 1.0.3"
 
 # Execution helpers
 if Bundler.settings[:path].nil?
