@@ -1,0 +1,36 @@
+/****************************************************************************
+ * INCLUDES ALL NON-COLOR VARIABLES (WIDTHS, PERCENTAGES, ETC) 
+ ****************************************************************************/
+
+$cfgFullWidth: 960;
+$cfgColMainWidth: 690;
+$cfgColSidebarWidth: 210px;
+
+//Forms/Inpusts
+$_form_max_width: 480px;
+$_form_row_height: 26;
+$_form_input_height: 24;
+
+$_form_calc_width: 430;
+$_form_calc_label: 145;
+$_form_calc_spacing: 10;
+$_form_calc_input: 275;
+$_form_calc_input_checkbox: 10;
+$_form_calc_input_checkbox_label: 270;
+
+$width_desktop: 960; // < desktop, max
+$width_tablet: 760;
+$width_mobile: 480; // < tablet
+
+$_checkout_step_height: 45;
+
+$default_padding: 30;
+$default_padding_small: 20;
+$default_margin: 20;
+
+$headerPanelHeight: 110;
+$headerPanelContentHeight: 30;
+$headerPanelVerticalSpacing: ($headerPanelHeight - $headerPanelContentHeight) / 2;
+$headerSearchInputPaddingLeft: 19;
+$headerSearchInputPaddingRight: 34;
+$headerSearchInputBorderRadius: 13;

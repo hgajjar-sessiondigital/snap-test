@@ -1,0 +1,27 @@
+.offer-request {
+    .main {
+        width: 100%;
+    }
+    .step-container-outer {
+        background: $color_top_section_bg;
+
+        .steps-container {
+            @extend %full-page-width;
+        }
+    }
+    .page-title {
+        width: 100%;
+        margin-top: 0;
+    }
+    .step-content {
+        @extend %full-page-width;
+        @include box-sizing(border-box);
+
+        .purchase-table h4 {
+            font-weight: normal;
+        }
+        .buttons-set button {
+            padding: 0 20px;
+        }
+    }
+}

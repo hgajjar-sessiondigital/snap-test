@@ -1,0 +1,45 @@
+.country-selector {
+    .header-container .header-panel {
+        @include rem-property(height, $headerPanelHeight);
+
+        .switchers {
+            display: block;
+        }
+    }
+
+    .std {
+        .footer-links a,
+        .footer-links a:hover {
+            text-decoration: none;
+        }
+
+        .footer-bottom a,
+        .footer-bottom a:hover {
+            color: $color_special_white;
+            text-decoration: none;
+        }
+    }
+
+    .footer-block {
+        position: absolute;
+        top: auto;
+        left: 0;
+        right: 0;
+        margin-top: 20px;
+    }
+
+    .nav-container,
+    .breadcrumbs-wrapper,
+    .header-container .header-panel .header-message-container {
+        display: none;
+    }
+
+    .countires-languages-table {
+        width: 100%;
+
+        td {
+            border: 0;
+            padding: 10px;
+        }
+    }
+}

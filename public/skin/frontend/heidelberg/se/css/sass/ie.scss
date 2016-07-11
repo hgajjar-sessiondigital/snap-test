@@ -1,0 +1,40 @@
+/****************************************************************************
+ * ALL THE PIECES ARE PUT TOGETHER HERE
+ * THIS IS THE BASE OF THE GENERATED CSS FILE FOR OLD IE BROWSERS
+ ****************************************************************************/
+
+$is_IE: true;
+
+//Import compass tools we need
+@import "compass/utilities";
+@import "compass/css3";
+
+// colors
+@import "colors/default";
+
+// variables
+@import "variables/default";
+
+// sprites
+@import "decoration/sprites";
+
+// import all the module files
+@import "mixins";
+
+// reset defaults
+@import "reset";
+
+// typography
+@import "typography/default";
+
+// IE specific media query mixins
+@import "mixins/non_responsive";
+
+// import all the module files
+@import "modules";
+
+// import locale file
+@import "locales/sv_SE";
+
+// import locale file
+@import "store";

@@ -1,0 +1,46 @@
+/****************************************************************************
+ * CONTAINS STORE SPECIFIC STYLING (NOT USED ANYWHERE ELSE) 
+ ****************************************************************************/
+
+.customer-address-index.customer-account-area {
+
+    .col2-set.tax-upload {
+        // "translation" of file upload input
+        .box-content {
+            position: relative;
+
+            input[name="tax_certification"] {
+                visibility: hidden;
+            }
+            .tax_certification_replace {
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                button {
+                    color: #000;
+                    background-color: #fff;
+                    padding: 0 7px;
+                    @include font-size(11.5);
+                    font-weight: lighter;
+                    border: 1px solid $color_border_light;
+                    border-radius: 5px;
+                    vertical-align: middle;
+                    &:hover {
+                        color: #000;
+                        border: 1px solid $color_border_light;
+                    }
+                }
+                span {
+                    display: inline-block;
+                    padding: 0 4px 0 0;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+
+}

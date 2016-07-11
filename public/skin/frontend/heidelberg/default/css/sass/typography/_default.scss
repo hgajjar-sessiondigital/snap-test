@@ -1,0 +1,94 @@
+/****************************************************************************
+ * DEFAULT FONT VARIABLES, FONT FACES, AND FONT SIZES
+ ****************************************************************************/
+ 
+$cfgBaseFontSize: 10;
+
+$cfgFontSizeSmall: 11;
+$cfgLineHeightSmall: 14;
+$cfgFontSizeNormal: 13;
+$cfgLineHeightNormal: 19;
+$cfgFontSizeBig: 14;
+$cfgLineHeightBig: 20;
+$cfgFontSizeSpecial: 35;
+
+
+/* @todo remove this
+@include font-face(
+    "Heidelberg Gothic Light",
+    font-files("heidelberg-gothic-ml-light.woff", "heidelberg-gothic-ml-light.svg", "heidelberg-gothic-ml-light.eot", "heidelberg-gothic-ml-light.otf"),
+    "heidelberg-gothic-ml-light.eot"
+);*/
+
+/*
+.ttf is from designer
+The other fonts were converted on https://onlinefontconverter.com/ and http://www.font2web.com/
+*/
+// regular
+@font-face {
+    font-family: "Heidelberg Gothic Web";
+    src: url("../../default/css/fonts/heidelberg-gothic-web-ml.eot");
+    src: url("../../default/css/fonts/heidelberg-gothic-web-ml.eot?#iefix") format('eot'),
+        url("../../default/css/fonts/heidelberg-gothic-web-ml.ttf") format('truetype'),
+        url("../../default/css/fonts/heidelberg-gothic-web-ml.svg") format('svg'),
+        url("../../default/css/fonts/heidelberg-gothic-web-ml.woff") format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+// bold
+@font-face {
+    font-family: "Heidelberg Gothic Web";
+    src: url("../../default/css/fonts/heidelberg-gothic-web-ml-bold.eot");
+    src: url("../../default/css/fonts/heidelberg-gothic-web-ml-bold.eot?#iefix") format('eot'),
+        url("../../default/css/fonts/heidelberg-gothic-web-ml-bold.ttf") format('truetype'),
+        url("../../default/css/fonts/heidelberg-gothic-web-ml-bold.svg") format('svg'),
+        url("../../default/css/fonts/heidelberg-gothic-web-ml-bold.woff") format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+// bold-italic
+@font-face {
+    font-family: "Heidelberg Gothic Web";
+    src: url("../../default/css/fonts/heidelberg-gothic-web-ml-bold-italic.eot");
+    src: url("../../default/css/fonts/heidelberg-gothic-web-ml-bold-italic.eot?#iefix") format('eot'),
+        url("../../default/css/fonts/heidelberg-gothic-web-ml-bold-italic.ttf") format('truetype'),
+        url("../../default/css/fonts/heidelberg-gothic-web-ml-bold-italic.svg") format('svg'),
+        url("../../default/css/fonts/heidelberg-gothic-web-ml-bold-italic.woff") format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+// light
+@font-face {
+    font-family: "Heidelberg Gothic Web";
+    src: url("../../default/css/fonts/heidelberg-gothic-web-ml-light.eot");
+    src: url("../../default/css/fonts/heidelberg-gothic-web-ml-light.eot?#iefix") format('eot'),
+        url("../../default/css/fonts/heidelberg-gothic-web-ml-light.ttf") format('truetype'),
+        url("../../default/css/fonts/heidelberg-gothic-web-ml-light.svg") format('svg'),
+        url("../../default/css/fonts/heidelberg-gothic-web-ml-light.woff") format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+// light-italic
+@font-face {
+    font-family: "Heidelberg Gothic Web";
+    src: url("../../default/css/fonts/heidelberg-gothic-web-ml-light-italic.eot");
+    src: url("../../default/css/fonts/heidelberg-gothic-web-ml-light-italic.eot?#iefix") format('eot'),
+        url("../../default/css/fonts/heidelberg-gothic-web-ml-light-italic.ttf") format('truetype'),
+        url("../../default/css/fonts/heidelberg-gothic-web-ml-light-italic.svg") format('svg'),
+        url("../../default/css/fonts/heidelberg-gothic-web-ml-light-italic.woff") format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+// italic
+@font-face {
+    font-family: "Heidelberg Gothic Web";
+    src: url("../../default/css/fonts/heidelberg-gothic-web-ml-italic.eot");
+    src: url("../../default/css/fonts/heidelberg-gothic-web-ml-italic.eot?#iefix") format('eot'),
+        url("../../default/css/fonts/heidelberg-gothic-web-ml-italic.ttf") format('truetype'),
+        url("../../default/css/fonts/heidelberg-gothic-web-ml-italic.svg") format('svg'),
+        url("../../default/css/fonts/heidelberg-gothic-web-ml-italic.woff") format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+$fontBase: "Heidelberg Gothic Web";

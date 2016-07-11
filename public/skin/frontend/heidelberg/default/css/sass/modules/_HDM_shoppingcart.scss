@@ -1,0 +1,617 @@
+.checkout-cart-index .cart {
+    button.button {
+        @include font-size(13);
+        text-align: center;
+    }
+    legend {
+        @extend %clearfix;
+        @include text(16, normal, $color_normal, normal);
+        display: block;
+        width: 920px;
+        padding: 20px;
+        background: #fff;
+        border-bottom: 1px solid $color_border_light;
+
+        em {
+            float: right;
+            @include text(12, normal, $color_brand, normal);
+        }
+    }
+    .quote-request-table {
+        &.bordered {
+            padding-bottom: 25px;
+            margin-bottom: 20px;
+        }
+
+        .additional-information {
+            margin-top: 20px;
+            padding: 20px;
+            background: #fff;
+
+            .button {
+                float: right;
+                width: 345px;
+                padding: 0 10px;
+                text-align: center;
+            }
+        }
+    }
+    .upload-document-form {
+        @extend %clearfix;
+        color: $color_dark;
+
+        .input-box, button {
+            float: left;
+        }
+        label {
+            @include line-height(25);
+        }
+        label, input {
+            color: inherit;
+        }
+        button.button {
+            @include font-size($cfgFontSizeNormal);
+            color: $color_special_white;
+        }
+        p.upload-documents {
+            clear: both;
+            @include font-size($cfgFontSizeSmall);
+        }
+        .input-box {
+            position: relative;
+        }
+    }
+    .box-collateral {
+        margin-top: 20px;
+    }
+}
+
+.checkout-cart-index button.btn-update {
+    
+}
+.shopping-cart-bottom .left-col button.button {
+    color: $color_dark;
+    border: $color_button_normal_border;
+
+    &:hover, &:active, &:focus {
+        color: $color_special_white;
+        border: $color_button_normal_border;
+    }
+}
+
+.cart-table, .data-table {
+    background: #fff;
+
+    .cart-table-content, .data-table-content {
+        @extend %clearfix;
+
+        &.header .col.col-qty {
+            overflow: hidden;
+        }
+        .col {
+            float: left;
+            margin-right: 18px;
+            overflow: hidden;
+
+            &.full {
+                float: none;
+                width: 100%;
+                margin-right: 0;
+            }
+            &.col-name {
+                width: 212px;
+                width: 306px; // TODO: remove this line once the availability is added
+                padding-right: 28px;
+                overflow: visible;
+            }
+            &.col-id {
+                width: 140px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            &.col-qty {
+                width: 70px;
+                position: relative;
+                overflow: visible;
+            }
+            &.col-unit {
+                width: 42px;
+                overflow: visible;
+            }
+            &.col-availability {
+                display: none; // TODO: remove this line once the functionality is added
+                width: 100px;
+            }
+            &.col-price {
+                width: 84px;
+                text-align: right;
+            }
+            &.col-no-price {
+                width: 162px;
+                text-align: left;
+            }
+            &.col-delete {
+                width: 56px;
+                margin-right: 0;
+                text-align: right;
+            }
+            &.col-last {
+                margin-right: 0;
+                text-align: right;
+            }
+            &.col-control {
+                text-align: center;
+            }
+        }
+
+        &.header {
+            padding: 18px 20px 13px;
+
+            .col {
+                @include font-size($cfgFontSizeNormal);
+                color: $color_normal;
+            }
+        }
+        &.body {
+            @include text(normal, normal, light);
+
+            a {
+                color: inherit;
+            }
+
+            .col-name {
+                position: relative;
+
+                .product-warnings {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    height: auto;
+                    li {
+                        float: none;
+                        margin-bottom: 4px;
+                    }
+                }
+            }
+            .row {
+                @extend %clearfix;
+                padding: 11px 0 16px;
+                border-top: 1px solid $color_border_light;
+                margin: 0 20px;
+                position: relative;
+
+                &.successor-top {
+                    position: relative;
+                    border: 2px solid $color_inform_err;
+                    border-bottom: 0;
+                    padding: 11px 20px 16px;
+                    margin: -2px -1px 0;
+
+                    .col.col-name {
+                        width: 210px; // TODO: remove this line once the availability is added
+                        width: 328px;
+                    }
+
+                    > .col-name, > .col-id, > .col-unit, > .col-price {
+                        @include opacity(0.5);
+                    }
+                }
+                &.successor-bottom {
+                    background: $color_basketpage_totals_bg;
+                    clear: both;
+                    margin: 0;
+                    border: 2px solid $color_inform_err;
+                    border-top: 1px solid $color_border_light;
+                    padding: 11px 19px 16px;
+                    margin: -1px -1px 0;
+                    position: relative;
+
+                    &:before {
+                        position: absolute;
+                        top: -1px;
+                        left: 50%;
+                        margin-left: - (sprite-width($sprite-main, successor-triangle-bottom) / 2);
+                        content: "\00a0";
+                        color: transparent;
+                        overflow: hidden;
+                        @include add-sprite($sprite: successor-triangle-bottom, $map: $sprite-main, $addDim: TRUE);
+                    }
+                    .successor-row-title {
+                        @include text(14, normal, $color_brand, bold);
+                        margin-top: 6px;
+                        margin-bottom: 10px;
+                    }
+                    .buttons-set {
+                        clear: both;
+                        text-align: right;
+                        padding-top: 10px;
+                        margin: 0;
+
+                        button.button {
+                            @include line-height(23);
+                        }
+                    }
+                }
+                .successor-warning {
+                    @include text(13, normal, $color_inform_err);
+                    margin-top: 5px;
+                    margin-bottom: 17px;
+
+                    &:before {
+                        content: "\00a0";
+                        color: transparent;
+                        overflow: hidden;
+                        @include add-sprite($sprite: msg-error-icon, $map: $sprite-main, $addDim: TRUE);
+                        float: left;
+                        margin-top: -1px;
+                        margin-right: 12px;
+                    }
+                }
+            }
+            h2, h3 {
+                @include text(normal, normal, $color_brand, bold);
+
+                a {
+                    color: inherit;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+            h2, p {
+                padding: 0;
+            }
+            .col-unit {
+                text-transform: uppercase;
+            }
+            .options-container {
+                @extend %clearfix;
+                span {
+                    float: left;
+                    margin-right: 14px;
+                }
+                .item-options {
+                    float: left;
+                }
+                dt, dd {
+                    display: inline;
+                }
+                dt.last-in-row:before {
+                    content: "|";
+                    position: relative;
+                    top: -1.5px;
+                    padding-right: 3px;
+                }
+                dd.last-in-row:after {
+                    content: "\00a0";
+                    display: block;
+                    line-height: 0;
+                }
+            }
+            .availability {
+                display: inline-block;
+                padding-left: 15px;
+            }
+            .price {
+                display: block;
+            }
+            .input-text {
+                height: 24px;
+                @include line-height(24);
+                padding: 0 10px;
+
+                &.qty {
+                    text-align: right;
+                    width: 34px;
+                }
+                &.reference {
+                    width: 264px;
+                }
+            }
+            .reference-container {
+                clear: both;
+                padding-top: 10px;
+
+                a:hover {
+                    text-decoration: underline;
+                }
+                .input-text.reference {
+                    display: none;
+                }
+                &.active {
+                    .add-reference {
+                        display: none;
+                    }
+                    .input-text.reference {
+                        display: block;
+                    }
+                }
+                .add-reference.disabled {
+                    cursor: default;
+                    @include opacity(0.5);
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        &.footer {
+            @include height(98);
+            @include line-height(98);
+            margin: 0 20px;
+            border-top: 1px solid $color_border_light;
+
+            a.icon-link {
+                @include text(normal, normal, $color_brand);
+                @include add-inline-icon();
+                padding-left: 24px;
+                display: inline-block;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            button.btn-update {
+                float: right;
+                margin-top: 31px;
+                padding: 0 40px;
+            }
+        }
+    }
+}
+a.print-link {
+    @include text(normal, normal, $color_brand);
+    @include add-inline-icon(breadcrumb-arrow, before);
+    padding-left: 16px;
+
+    &:before {
+        top: -2px;
+    }
+    &:hover {
+        text-decoration: underline;
+    }
+}
+.checkout-cart-index .cart-table .cart-table-content.body {
+    .col-name, .col-unit, .col-availability, .col-price, .col-id, .col-no-price {
+        padding-top: 8px;
+    }
+    .col-qty, .col-delete {
+        padding-top: 4px;
+    }
+}
+
+.shopping-cart-bottom {
+    @extend %clearfix;
+    background: #fff;
+    margin-top: 43px;
+    padding: 29px 19px;
+
+    .left-col {
+        float: left;
+        width: 500px;
+
+        .button {
+            color: $color_dark;
+            float: left;
+            padding: 0 10px;
+            overflow: hidden;
+            text-align: center;
+
+            &:hover, &:active, &:focus {
+                color: $color_special_white;
+            }
+            &.btn-continue {
+                margin-right: 15px;
+            }
+        }
+        .buttons-set .button {
+            width: 164px;
+        }
+    }
+    .right-col {
+        float: right;
+        width: 367px;
+
+        .bonus-points-container {
+            clear: both;
+            padding: 5px 0 0;
+            font-style: italic;
+            text-align: right;
+            @include text(small, normal, dark);
+
+            span.bonus-points {
+                color: $color_brand;
+            }
+        }
+    }
+    .deals {
+        margin-bottom: 30px;
+
+        .form-list {
+            max-width: none;
+            display: inline-block;
+        }
+        button.button {
+            @include font-size(12);
+            height: 26px;
+            @include line-height(26);
+            width: 180px;
+
+            &.cancel-btn {
+                width: 190px;
+            }
+            &:disabled:hover {
+                color: $color_dark;
+            }
+        }
+        li {
+            margin-bottom: 5px;
+
+            .input-box {
+                @extend %clearfix;
+            }
+            .input-text {
+                width: 176px;
+                float: left;
+                margin-right: 10px;
+                padding: 0 10px;
+            }
+        }
+        .cancel-btn {
+            margin-left: 5px;
+        }
+    }
+    .totals {
+        table {
+            width: 100%;
+
+            td {
+                border: 0;
+                border-bottom: 1px dashed $color_border_light;
+                width: 50%;
+                padding: 6px 0;
+                @include text(small, 12, light);
+            }
+            tbody tr.last-row td, tbody tr:last-child td {
+                border: 0;
+                padding-bottom: 24px;
+            }
+
+            .subtotal td {
+                @include text(18, normal, $color_normal);
+                border: 0;
+                padding: 0 0 16px;
+            }
+            .grand-total td {
+                @include text(18, normal, $color_normal, bold);
+                border-top: 1px solid $color_border_light;
+                border-bottom: 1px solid $color_border_light;
+                padding: 13px 0 11px;
+            }
+            .price {
+                display: block;
+            }
+        }
+    }
+    .buttons-set {
+        @extend %clearfix;
+        margin: 0;
+        padding-top: 20px;
+
+        .checkout-types {
+            &.has-items-wo-price button.btn-checkout {
+                em {
+                    @include font-size(11);
+                }
+            }
+            button {
+                width: 100%;
+                padding: 0 10px;
+                text-align: center;
+
+                &:disabled {
+                    background: $color_button_disabled_bg;
+                    border-color: $color_button_disabled_bg;
+                    color: $color_light;
+                }
+            }
+        }
+    }
+}
+table.shopping-cart-totals-table {
+    float: right;
+    width: 367px;
+
+    td {
+        border: 0;
+        border-bottom: 1px dashed $color_light;
+        width: 50%;
+        padding: 2px 0 1px;
+        @include text(small, normal, dark);
+    }
+    tbody tr.last-row td, tbody tr:last-child td {
+        border: 0;
+        padding-bottom: 24px;
+    }
+    .subtotal td {
+        @include text(18, normal, $color_brand);
+        border: 0;
+        padding: 0 0 16px;
+    }
+    .grand-total td {
+        @include text(18, normal, $color_brand, bold);
+        border-top: 1px solid $color_border_light;
+        border-bottom: 1px solid $color_border_light;
+        padding: 13px 0 11px;
+    }
+    .price {
+        display: block;
+    }
+}
+
+.additional-information {
+    @extend %clearfix;
+
+    label, span.label {
+        @include text(normal, normal, dark);
+        float: left;
+    }
+    textarea {
+        margin-top: 4px;
+        resize: vertical;
+        width: 247px;
+        height: 30px;
+        float: left;
+        clear: left;
+    }
+}
+
+.cart-empty {
+    a {
+        color: $color_brand;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.loading-animation-bg{
+    background: #fff;
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 10000;
+}
+.loading-animation-box-wrapper{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10001;   
+}
+.loading-animation-box{
+    width: 300px;
+    margin: 0 auto;
+    .loading-animation-loader{
+        padding: 50px;
+        text-align: center;
+    }
+    .loading-animation-text{
+        background: #555;
+        padding: 15px;
+        @include border-radius(10px);
+        p{
+            @include text($fontSize: big, $color: #fff, $weight: bold);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+    }
+}

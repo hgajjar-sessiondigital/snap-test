@@ -1,0 +1,8 @@
+/****************************************************************************
+ * SPRITE SETTINGS
+ ****************************************************************************/
+
+@import "compass/utilities/sprites/base";
+
+$sprite-icon: sprite-map("sprite-icon/*.png", $layout: horizontal);
+$sprite-main: sprite-map("sprite-main/*.png", $layout: smart);

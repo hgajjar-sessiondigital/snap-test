@@ -1,0 +1,101 @@
+.toolbar {
+    @extend %clearfix;
+    @include rem-property(margin-bottom, 11);
+    @include text(big, 25, $color_light);
+
+    .toolbar-bottom & {
+        margin-top: 16px;
+
+        .sorter {
+            display: none;
+        }
+    }
+    .sorter {
+        float: left;
+
+        .toolbarselect-wrapper {
+            margin-left: 11px;
+            select {
+                min-width: 150px;
+            }
+        }
+    }
+    .pager {
+        float: right;
+
+        ol, li {
+            float: left;
+            height: 19px;
+            overflow: hidden;
+        }
+
+        li {
+            margin-right: 4px;
+
+            &:after {
+                content: "|";
+                color: $color_brand;
+                position: relative;
+                padding-left: 4px;
+            }
+            &.last {
+                margin-right: 0;
+            }
+            &.last:after, &.arrow:after {
+                content: "";
+                display: none;
+            }
+            &.current {
+                color: $color_brand;
+                cursor: text;
+            }
+
+            span, a {
+                float: left;
+            }
+
+            a {
+                color: $color_brand;
+                font-weight: bold;
+            }
+        }
+
+        .limiter {
+            float: left;
+
+            label {
+                float: left;
+                margin: 0 10px;
+            }
+        }
+        .pages {
+            float: left;
+            margin-left: 90px;
+
+            a.previous {
+                @include iconize($sprite-icon, pagination-prev);
+                height: 26px;
+                margin-right: 8px;
+            }
+            a.next {
+                @include iconize($sprite-icon, pagination-next);
+                height: 26px;
+                margin-left: 8px;
+            }
+        }
+    }
+
+    label {
+        cursor: text;
+        &.only-products{
+            display: none;
+            .catalog-category-view, .catalogsearch-result-index &{
+                display: inline;
+            }
+        }
+    }
+
+    a {
+        color: $color_brand;
+    }
+}

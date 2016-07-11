@@ -1,0 +1,88 @@
+/****************************************************************************
+ * TYPOGRAPY MIXINS/FUNCTIONS
+ ****************************************************************************/
+
+// Converts pixels to rem
+@function rem-value ($value)
+{
+    @return ($value / $cfgBaseFontSize) + rem;
+}
+
+// Converts pixels to rem, and adds a CSS property keeping the px value as a fallback
+@mixin rem-property ($property, $value)
+{
+    #{$property}: ($value) + px;
+    #{$property}: rem-value($value);
+}
+
+// Converts pixels to rem, and adds font-size CSS property keeping the px value as a fallback
+@mixin font-size ($value)
+{
+    @include rem-property(font-size, $value);
+}
+
+// Converts pixels to rem, and adds line-height CSS property keeping the px value as a fallback
+@mixin line-height ($value)
+{
+    @include rem-property(line-height, $value);
+}
+
+@mixin height ($value)
+{
+    @include rem-property(height, $value);
+}
+
+@mixin text ($fontSize: normal, $lineHeight: normal, $color: normal, $weight: normal)
+{
+	@if $fontSize == small {
+		@include font-size ($cfgFontSizeSmall);
+	} @else if $fontSize == normal {
+		@include font-size ($cfgFontSizeNormal);
+	} @else if $fontSize == big {
+		@include font-size ($cfgFontSizeBig);
+	} @else {
+		@include font-size ($fontSize);
+	}
+
+	@if $lineHeight == small {
+		@include line-height ($cfgLineHeightSmall);
+	} @else if $lineHeight == normal {
+		@include line-height ($cfgLineHeightNormal);
+	} @else if $lineHeight == big {
+		@include line-height ($cfgLineHeightBig);
+	} @else if $lineHeight == inherit {
+		line-height: inherit;
+	} @else {
+		@include line-height ($lineHeight);
+	}
+
+	@if $color == lightest {
+		color: $color_lightest;
+	} @else if $color == light {
+		color: $color_light;
+	} @else if $color == normal {
+		color: $color_normal;
+	} @else if $color == dark {
+		color: $color_dark;
+	} @else if $color == darkest {
+		color: $color_darkest;
+	} @else {
+		color: $color;
+	}
+
+	font-weight: $weight;
+}
+
+@mixin text-underline($color: dark, $padding: 3px) {
+    @if $color == dark {
+        border-bottom: 1px solid $color_dark;
+    }
+    @elseif $color == light {
+        border-bottom: 1px solid $color_special_white;
+    }
+    @else {
+        border-bottom: 1px solid $color;
+    }
+    padding-bottom: $padding;
+    text-decoration: none;
+}

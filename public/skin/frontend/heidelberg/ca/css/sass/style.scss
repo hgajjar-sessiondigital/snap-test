@@ -1,0 +1,40 @@
+/****************************************************************************
+ * ALL THE PIECES ARE PUT TOGETHER HERE
+ * THIS IS THE BASE OF THE GENERATED CSS FILE FOR NON-IE BROWSERS
+ ****************************************************************************/
+
+$is_IE: false;
+
+//Import compass tools we need
+@import "compass/utilities";
+@import "compass/css3";
+
+// colors
+@import "colors/default";
+
+// variables
+@import "variables/default";
+
+// sprites
+@import "decoration/sprites";
+
+// import all the module files
+@import "mixins";
+
+// reset defaults
+@import "reset";
+
+// typography
+@import "typography/default";
+
+// media query mixins
+@import "mixins/responsive";
+
+// import all the module files
+@import "modules";
+
+// import locale file
+@import "locales/en_CA";
+
+// import locale file
+@import "store";

@@ -1,0 +1,11 @@
+@mixin responsive-full-width() {
+    width: auto;
+    max-width: $width_tablet + px;
+    @include respond-to-tablet {
+        max-width: $width_desktop + px;
+    }
+    @include respond-to-desktop {
+        width: $width_desktop + px;
+    }
+    margin: 0 auto;
+}

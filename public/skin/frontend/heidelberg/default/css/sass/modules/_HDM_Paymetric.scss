@@ -1,0 +1,34 @@
+#paymetric_iframe{
+    width: 400px !important; 
+    height: 170px;
+}
+.paymetric-form-wrapper {
+    .DataInterceptErrors {
+        color: $color_inform_err;
+    }
+    table.DataIntercept{
+        width: 300px;
+        tr{
+            td{
+                padding: 5px 0;
+                border: 0;
+                width: 150px;
+                select, #Paymetric_CreditCardNumber {
+                    width: 150px;
+                }
+            }    
+        }
+    }
+    #PayNowButton {
+        @extend %button-s;
+        @extend %button-action;
+        @extend %button-action-reverse-hover;
+        margin-left: 150px;
+        position: absolute;
+        left: -30000px;
+        top: 0;
+    }
+}
+.paymetric-response{
+    width: 300px;
+}

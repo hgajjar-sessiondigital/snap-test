@@ -1,0 +1,362 @@
+.wishlist-index-index .page-title h1 {
+    padding-bottom: 0;
+}
+.wishlists{
+	@extend %normal-box;
+}
+.wishlist-list-header{
+	@extend %clearfix;
+	margin-bottom: 10px;
+	li{
+		float: left;
+		@include line-height(20);
+		font-weight: bold;
+		color: $color_dark;
+		&.name{
+			width: 302px;
+		}
+		&.updated-at{
+			width: 100px;
+		}
+		&.cnt, &.details{
+			width: 85px;
+		}
+		&.edit{
+			width: 65px;
+		}
+		&.delete{
+			float: right;
+			width: 50px;
+		}
+	}
+}
+.wishlist-list, .wishlist-product-list {
+	background: #fff;
+	li.wishlist-item {
+		@extend %clearfix;
+		margin-bottom: 10px;
+		@extend %bg-wishlist-list-item; 
+		border: 1px solid $color_wishlist_list_item_border;
+		@include line-height(54);
+		.handle {
+			float: left;
+			@include iconize($sprite: dragndrop);
+			@include height(54);
+			border-right: 1px solid $color_wishlist_list_item_border;
+			cursor: pointer;
+		}
+		.name {
+			float: left;
+			padding-left: 15px;
+			width: 250px;
+			@include height(54);
+			font-weight: bold;
+			color: $color_normal;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+		.updated-at {
+			float: left;
+			width: 100px;
+			@include height(54);
+		}
+		.cnt, .details {
+			float: left;
+			width: 85px;
+			@include height(54);
+		}
+		.edit{
+			width: 50px;
+			@include height(54);
+			display: inline-block;
+			text-align: center;
+		}
+		.delete{
+			float: right;
+			width: 50px;
+			padding-left: 15px;
+			@include height(54);
+			display: inline-block;
+			text-align: center;
+		}
+	}
+	&.wishlist-mini-wishlists{
+		li.wishlist-item{
+			margin-bottom: 0;
+			border-bottom: 0;
+			width: 240px;
+			@include line-height(40);
+			@include height(40);
+			@include add-inline-icon(mini-shopping-list-arrow, after) {
+				right: 10px;
+			}
+			&:hover{
+				@extend %bg-wishlist-list-item-hover; 
+				border-color: $color_wishlist_list_item_border_hover;
+				@include add-inline-icon(mini-shopping-list-arrow-hover, after) {
+					right: 10px;
+				}
+			}
+			a.name {
+				display: block;
+				width: 220px;
+				@include line-height(40);
+				@include height(40);
+			}
+			&:hover a.name {
+				color: #fff;
+			}
+		}
+	}
+}
+.wishlist-product-list {
+	padding-bottom: 20px;
+	li.wishlist-item {
+		background: $color_special_white;
+		border: 0;
+		padding: 0;
+		@include line-height(75);
+
+		.handle-wrapper {
+			@extend %bg-wishlist-list-item; 
+			@include line-height(75);
+			float: left;
+		}
+		.handle {
+			border-left: 1px solid $color_wishlist_list_item_border;
+			@include height(75);
+		}
+		.button-wishlist-item-remove span {
+			height: 100%;
+		}
+	}
+}
+.wishlist-popup{
+	width: 400px;
+	height: 260px;
+	position: relative;
+	.buttons-set {
+		text-align: center;
+	}
+}
+.data-table.wishlist-product-list {
+	.data-table-content .col {
+		&.col-name {
+			width: 347px;
+			padding-right: 0;
+
+			> .product-name {
+				float: left;
+				line-height: normal;
+				padding-left: 15px;
+				width: 295px;
+				@include height(28);
+				overflow: hidden;
+				margin-top: 10px;
+				color: $color_brand;
+			}
+		}
+		&.col-delete {
+			text-align: center;
+			margin-right: 10px;
+		}
+		&.col-select {
+			width: 39px;
+			text-align: center;
+			margin-right: 0;
+		}
+	}
+	.data-table-content.body {
+		.row {
+			padding: 0;
+			position: relative;
+			margin-top: -1px;
+			border-bottom: 1px solid #CCC;
+
+			&.successor-top, &.successor-bottom {
+				margin: -2px 20px 0;
+
+				.col.col-name {
+					width: 347px;
+				}
+				.successor-warning {
+					padding: 15px;
+					border-bottom: 1px solid $color_wishlist_list_item_border;
+					margin: 0;
+				}
+				.successor-row-title {
+					margin: 0;
+					padding: 10px 52px;
+					border-bottom: 1px solid $color_wishlist_list_item_border;
+				}
+			}
+			&.successor-top {
+				border-bottom-color: $color_inform_err;
+				z-index: 1;
+
+				.col.col-select {
+					display: none;
+				}
+			}
+			&.successor-bottom {
+				margin: 0;
+				border-left: 0;
+				border-right: 0;
+				border-bottom: 1px solid $color_inform_err;
+
+				.col {
+					@include line-height(60);
+				}
+				.col.col-name {
+					width: 310px;
+					margin-left: 37px;
+				}
+				.buttons-set {
+					margin-right: 20px;
+				}
+			}
+		}
+		.reference-container {
+			clear: none;
+			float: left;
+			line-height: normal;
+			padding-top: 0;
+			margin-top: 10px;
+			margin-left: 15px;
+			margin-bottom: 10px;
+			width: 145px;
+
+			a.add-reference{
+				text-decoration: underline;
+				&:hover{
+					text-decoration: none;
+				}
+			}
+
+			.input-text.reference {
+				width: 115px;
+				margin-top: -5px;
+				@include height(20);
+				@include line-height(20);
+			}
+		}
+		.id-container {
+			clear: none;
+			float: left;
+			line-height: normal;
+			padding-top: 0;
+			margin-top: 10px;
+			margin-left: 0px;
+			width: 145px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+	}
+}
+.my-wishlist {
+	.back-to-wishlists{
+		margin-bottom: 20px;
+	}
+	.actions {
+		@extend %clearfix;
+		padding: 20px;
+		background: #fff;
+
+		.btn-update {
+			color: $color_dark;
+
+			&:hover {
+				color: $color_special_white;
+			}
+		}
+		.left-links {
+			float: left;
+
+			a {
+				float: left;
+
+				&.print-link:before {
+					top: 0px;
+				}
+				&.delete-shopping-list {
+					margin-top: 12px;
+
+					button {
+						margin-right: 10px;
+					}
+					&:hover button {
+						@extend %bg-button-normal-hover;
+						@include add-button-icon(btn-trash-hover, btn-trash-hover);
+						border: $color_button_action_border;
+					}
+				}
+			}
+		}
+	}
+	.select-all {
+		input[type="checkbox"] {
+	        margin-right: 39px;
+	    }
+	    button {
+	    	margin-right: 10px;
+	    }
+	    .btn-cart {
+	    	margin-right: 0;
+	    }
+	}
+	.add-to-wishlist-by-sku-form {
+	    @extend %clearfix;
+	    padding: 20px;
+	    background: #fff;
+
+	    .input-box {
+	        float: right;
+	        position: relative;
+
+	        .validation-pos-left .validation-advice {
+	            left: -92px;
+	        }
+	    }
+	    .input-text {
+	        @include height(23);
+	        @include line-height(23);
+	        padding: 0 5px;
+	    }
+	    label {
+	        @include line-height(25);
+	    }
+	    button {
+	        color: $color_dark;
+
+	        &:hover, &:active, &:focus {
+	            color: $color_special_white;
+	        }
+	        &:disabled:hover {
+	            color: $color_dark;
+	        }
+	    }
+	    label, .input-text, button {
+	        float: right;
+	        margin-left: 8px;
+	    }
+	}
+}
+.ui-sortable-disabled{
+	opacity: 0.5;
+}
+
+.myaccount-details-block{
+	&.wishlist-details-block-data{
+		padding: 20px;
+		border-bottom: 0;
+	}
+	&.wishlist-details-block-addto{
+		border-top: 0;
+		border-bottom: 0;
+	}
+    .wishlist-empty {
+        padding-left: 20px;
+    }
+}

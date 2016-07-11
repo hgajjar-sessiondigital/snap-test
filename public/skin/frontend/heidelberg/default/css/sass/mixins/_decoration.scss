@@ -1,0 +1,171 @@
+/* ***************************************************************************************
+   This file is for decoration mixins
+   *************************************************************************************** */
+
+// @todo not sure why transpiling fails without this
+$cfgBaseFontSize: 10;
+
+%header-branding {
+    .branding {
+        position: relative;
+        float: left;
+        width: sprite-width($sprite-main, logo-main);
+        margin-left: 18px;
+
+        .logo {
+            padding: 0;
+            @include rem-property(line-height, $headerPanelHeight);
+
+            .img {
+                vertical-align: middle;
+                @include rem-property(height, $headerPanelContentHeight);
+                img {
+                    height: 100%;
+                    display: block;
+                }
+
+                &.logo-svg {
+                    display: none;
+                }
+
+                html.svg &.logo-svg {
+                    display: inline-block;
+                }
+                html.svg &.logo-png {
+                    display: none;
+                }
+            }
+
+            span {
+                position: absolute;
+                width: 0;
+                height: 0;
+                overflow: hidden;
+            }
+        }
+
+        a.logo {
+            display: block;
+        }
+    }
+}
+
+@function sprite-position-x($map, $sprite) {
+    $positions: sprite-position($map, $sprite);
+    @return nth($positions, 1);
+}
+
+@function sprite-position-y($map, $sprite) {
+    $positions: sprite-position($map, $sprite);
+    @return nth($positions, 2);
+}
+
+@function sprite-width($map, $sprite) {
+    @return image-width(sprite-file($map, $sprite));
+}
+
+@function sprite-height($map, $sprite) {
+    @return image-height(sprite-file($map, $sprite));
+}
+
+@mixin iconize($spriteMap: 0, $sprite: 0, $align: vertical) {
+    content: "\00a0";
+    color: transparent;
+    overflow: hidden;
+    @if $spriteMap == 0 {
+        $spriteMap: $sprite-icon;
+    }
+    @if $sprite != 0 {
+        @if $align == vertical {
+            background: $spriteMap sprite-position-x($spriteMap, $sprite) 50%;
+            width: sprite-width($spriteMap, $sprite);
+        }
+        @else {
+            @if $align == none{
+                background: sprite($spriteMap, $sprite);
+                height: sprite-height($spriteMap, $sprite);
+                width: sprite-width($spriteMap, $sprite);
+            }
+            @else {
+                background: $spriteMap 50% sprite-position-x($spriteMap, $sprite);
+                height: sprite-height($spriteMap, $sprite);
+            }
+        }
+    }
+}
+
+@mixin add-icon($place: after, $spriteMap: 0, $sprite: 0, $align: vertical) {
+    &:#{$place}{
+        @include iconize($spriteMap, $sprite, $align);
+        @content
+    }
+}
+
+@mixin add-sprite($sprite, $map: 0, $addDim: TRUE, $clearContent: FALSE) {
+    @if $map == 0 {
+        $map: $sprite-icon;
+    }
+
+    @if $clearContent == TRUE {
+        content: "\00a0";
+        color: transparent;
+        overflow: hidden;
+    }
+
+    background: sprite($map, $sprite);
+    @if $addDim == TRUE {
+        @include sprite-dimensions($map, $sprite)
+    }
+}
+
+@mixin add-button-icon($iconSprite, $iconHoverSprite) {
+    & > span{
+        display: inline-block;
+        @include add-icon($sprite: $iconSprite, $place: before){
+            display: inline-block;
+            float: left;
+            margin-right: 5px;
+        }
+    }
+    @if $iconSprite != $iconHoverSprite {
+        &:hover, &:focus{
+            & > span{
+                @include add-icon($sprite: $iconHoverSprite, $place: before);
+            }
+        }
+    }
+
+    &.button-xs{
+        padding: 0;
+        & > span{
+            content: "\00a0";
+            color: transparent;
+            overflow: hidden;
+            width: sprite-width($sprite-icon, $iconSprite);
+            margin-right: 0;
+        }
+    }
+}
+
+@mixin add-inline-icon($icon: link-arrow, $place: before){
+    $map: $sprite-icon;
+    @if $place == before {
+        padding-left: sprite-width($map, $icon) + 5px;
+    }
+    @else {
+        padding-right: sprite-width($map, $icon) + 5px;
+    }
+    position: relative;
+    @include add-icon(before, $map, $icon){
+        line-height: inherit;
+        position: absolute;
+        top: 0;
+        @if $place == before {
+            left: 0;
+        }
+        @else {
+            right: 0;
+        }
+        @content;
+    }
+}

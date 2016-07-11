@@ -1,0 +1,20 @@
+/* ***************************************************************************************
+   This file is mixins for IE. It should contain all the mixins the _responsive.scss does
+   without using media queries.
+   *************************************************************************************** */
+
+@mixin respond-to($media) {
+    @content;
+}
+
+@mixin respond-to-mobile() {
+    @content;
+}
+
+@mixin respond-to-tablet() {
+    @content;
+}
+
+@mixin respond-to-desktop() {
+    @content;
+}

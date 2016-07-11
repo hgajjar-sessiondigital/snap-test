@@ -1,0 +1,54 @@
+.customer-account-login {
+    .fieldset {
+        background: #fff;
+        border: 1px solid $color_border_light;
+        margin: 0;
+    }
+    .panel-container {
+        @include rem-property(margin-top, 20);
+        @include rem-property(margin-bottom, 20);
+        background: url('../../default/images/login-register-separator.png') repeat-y center top;
+    }
+
+    .col2-set {
+        @extend %clearfix;
+
+        .col-1, .col-2 {
+            float: left;
+            overflow: hidden;
+            padding: 8px 102px 0 56px;
+        }
+        .col-1 {
+            width: 320px;
+        }
+        .col-2 {
+            width: 318px;
+            padding-left: 60px;
+
+            p.pre {
+                @include rem-property(margin-bottom, 27);
+            }
+        }
+        p {
+            @include text(big, 20, dark);
+
+            &.pre {
+                @include rem-property(margin-bottom, 31);
+            }
+        }
+        .buttons-set {
+            @include rem-property(margin-top, 55);
+            @include rem-property(margin-bottom, 20);
+
+            button {
+                text-align: center;
+                letter-spacing: 1px;
+                width: 242px;
+            }
+        }
+    }
+    .benefit-logos {
+        @include rem-property(margin-top, 38);
+        @include rem-property(margin-bottom, 20);
+    }
+}

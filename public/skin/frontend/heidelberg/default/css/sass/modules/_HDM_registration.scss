@@ -1,0 +1,104 @@
+.account-create {
+    form.registration-form {
+        padding: 18px 0;
+    }
+    .fieldset {
+        margin: 0;
+
+        &.user, &.company {
+            float: left;
+            width: 300px;
+        }
+        &.user {
+            margin-right: 60px;
+        }
+    }
+    .form-list {
+        max-width: none;
+
+        &.control-group {
+            @include rem-property(margin-top, 10);
+        }
+        .fields.field-existing-customer {
+            @include rem-property(margin-top, 42);
+
+            label {
+                @include line-height(19);
+
+                span {
+                    font-weight: bold;
+                    display: block;
+                }
+            }
+        }
+        label {
+            @include font-size(12);
+            @include line-height(24);
+        }
+        .input-box {
+            @include rem-property(margin-bottom, 3);
+        }
+        .control {
+            @extend %clearfix;
+
+            .input-box, label {
+                padding: 0;
+            }
+            .input-box {
+                margin-right: 10px;
+                @include line-height(20);
+            }
+            .input-label {
+                float: left;
+                width: 57%;
+
+                p {
+                    @include font-size(11);
+                }
+            }
+            .col {
+                float: left;
+                margin-right: 40px;
+
+                .item {
+                    @extend %clearfix;
+                }
+                .input-label {
+                    width: auto;
+                }
+            }
+        }
+        .other-text {
+            clear: both;
+            float: left;
+            width: 36.2%;
+            padding: 0 9px;
+        }
+        a {
+            color: $color_brand;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    .buttons-set {
+        @include rem-property(margin-top, 22);
+
+        button {
+            width: 242px;
+            text-align: center;
+        }
+    }
+}
+
+.account-create, .checkout-onepage-index .opc .step {
+    .registration-intro {
+        width: 48.5%;
+        overflow: hidden;
+
+        p {
+            @include font-size(12);
+        }
+    }
+}

@@ -1,0 +1,106 @@
+//Homepage Teaser Slider
+
+.homepage-block-slider-wrapper{
+    @extend %full-page-width;
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 264px;
+	background: $color_lightest;
+}
+.homepage-block-slider-innerwrapper, .homepage-block-slider-placeholder{
+	@extend %full-page-width;
+	height: 390px;
+}
+
+.homepage-block-slider{
+	@extend %clearfix;
+	position: relative;
+	margin-bottom: 30px;
+	.homepage-slider{
+		width: 680px;
+		float: left;
+		button.slick-next, button.slick-prev{
+			display: none !important;
+		}
+		&:hover{
+			button.slick-next, button.slick-prev{
+				display: block !important;
+			}	
+		}
+	}
+	.homepage-small-slider{
+		width: 680px;
+		position: absolute;
+		width: 453px;
+		bottom: -30px;
+		left: -13px;
+	}
+	.slick-dots {
+		text-align: right;
+	}
+}
+.homepage-slider-sidebanners{
+	width: 280px;
+	height: 359px;
+	float: right;
+	position: relative;
+	background: #fff;
+	& > div{
+		position: absolute;
+		right: 0;
+		&.top{
+			top: 0;
+		}
+		&.bottom{
+			bottom: 0;
+		}
+	}
+}
+
+.cms-index-index{
+	.benefit-logos {
+        @include rem-property(margin-top, 38);
+        @include rem-property(margin-bottom, 20);
+    }
+}
+
+.teaser-bottom {
+	@extend %clearfix;
+
+	a {
+		display: block;
+	}
+	img {
+		max-width: 100%;
+        height: auto;
+        display: block;
+	}
+	.teaser-bottom-item {
+		width: 470px;
+		height: 195px;
+		overflow: hidden;
+		margin-bottom: 20px;
+
+		&.left {
+			float: left;
+			clear: both;
+		}
+		&.right {
+			float: right;
+		}
+	}
+}
+.beta-phase-banner {
+	background: $color_beta_phase_bg_default;
+	padding: 15px 0;
+
+	.inner-content {
+		@extend %full-page-width;
+		text-align: center;
+	}
+	p {
+		@include text(16, normal, $color_beta_phase_text_default, bold);
+		padding-bottom: 0;
+	}
+}

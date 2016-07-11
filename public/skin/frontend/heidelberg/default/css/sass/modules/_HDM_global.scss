@@ -1,0 +1,834 @@
+/****************************************************************************
+ * GLOBAL DESIGN ELEMENTS, BLOCKS
+ ****************************************************************************/
+
+/* =======================================================================================
+   Clearfix
+   ======================================================================================= */
+%clearfix{
+    @include pie-clearfix;
+}
+.cf, .clearfix {
+    @extend %clearfix;
+}
+
+/* =======================================================================================
+   Sizes
+   ======================================================================================= */
+%full-page-width {
+    width: $cfgFullWidth + px;
+    margin: 0 auto;
+}
+
+%absolute-full-width {
+    margin-right: -9999em;
+    margin-left: -9999em;
+    padding-right: 9999em;
+    padding-left: 9999em;
+}
+
+.full-page {
+    @extend %full-page-width;
+}
+
+/* =======================================================================================
+   html, body
+   ======================================================================================= */
+html {
+    font-size: 62.5%;   // need for rem units
+    width: 100%;
+}
+
+body {
+    font-size: $cfgFontSizeNormal + px;
+    color: $color_normal;
+    font-family: $fontBase;
+    background-color: $color_body_bg;
+
+    &.page-iframe {
+        background: transparent;
+    }
+}
+
+a {
+    color: $color_link;
+    &:hover{
+        color: $color_link_hover;
+    }
+}
+
+ /* =======================================================================================
+   Typography
+   ======================================================================================= */
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    @include text($fontSize: 25, $lineHeight: 25, $color: $color_brand, $weight: bold);
+    @include rem-property(padding-bottom, 25);
+}
+h2{
+    @include text($fontSize: 20, $lineHeight: 20, $color: $color_brand);
+    @include rem-property(padding-bottom, 20);
+}
+h3{
+    @include text($fontSize: 18, $lineHeight: 18, $color: $color_brand);
+    @include rem-property(padding-bottom, 18);
+}
+h4,h5,h6{
+    @include text($fontSize: 14, $lineHeight: 14, $color: $color_brand);
+    @include rem-property(padding-bottom, 14);
+}
+h2,h3,h4,h5,h6{
+    &.text-brand{
+        color: $color_brand;
+    }
+}
+h4 {
+    font-weight: bold;
+}
+
+.text-highlighted{
+    color: $color_brand;
+}
+.text-brand{
+    font-weight: lighter;
+}
+
+.text, p{
+    @include text($fontSize: normal, $lineHeight: normal, $color: normal);
+    padding: 0;
+    margin: 0;
+    @include rem-property(padding-bottom, $cfgLineHeightNormal);
+    &.text-separated{
+        border-bottom: 1px solid $color_border_light;
+        @include rem-property(margin-bottom, $cfgLineHeightNormal);
+    }
+    &.text-small{
+        @include text($fontSize: small, $lineHeight: small, $color: normal);
+        @include rem-property(padding-bottom, $cfgLineHeightSmall);
+        &.text-separated{
+            @include rem-property(margin-bottom, $cfgLineHeightSmall);
+        }
+    }
+    &.text-big{
+        @include text($fontSize: big, $lineHeight: big, $color: normal);
+        @include rem-property(padding-bottom, $cfgLineHeightBig);
+        &.text-separated{
+            @include rem-property(margin-bottom, $cfgLineHeightBig);
+        }
+    }
+}
+
+ /* =======================================================================================
+   Global layouts
+   ======================================================================================= */
+.page {
+    .main {
+        @extend %clearfix;
+        @include rem-property(padding-bottom, 22);
+        .page-iframe &{
+            padding-bottom: 0;
+        }
+    }
+    .main {
+        @extend %full-page-width;
+    }
+    .page-title {
+        @include rem-property(margin-top, 25);
+
+        h1 {
+            @include text(18, 25, $color_brand, bold);
+            @include rem-property(padding-bottom, 18);
+        }
+    }
+}
+
+.col1-layout {
+    .col-main {
+        width: 100%;
+    }
+}
+.col2-left-layout {
+    .col-left {
+        float: left;
+    }
+    .col-main {
+        float: right;
+    }
+}
+.col2-right-layout {
+    .col-main {
+        float: left;
+    }
+    .col-right {
+        float: right;
+    }
+}
+.col2-left-layout, .col2-right-layout {
+    .col-main {
+        width: $cfgColMainWidth + px;
+    }
+    .sidebar {
+        width: $cfgColSidebarWidth;
+    }
+}
+.col2-set{
+    @extend %clearfix;
+    .col-1{
+        float: left;
+        width: 48.5%;
+    }
+    .col-2{
+        float: right;
+        width: 48.5%;
+    }
+}
+
+/* =======================================================================================
+   Data table
+   ======================================================================================= */
+.data-table th,td{
+    @include text(12, 20, $color_dark);
+    padding: 5px 10px;
+    border: 1px solid $color_border;
+    &.label{
+        width: 33%;
+    }
+}
+.product-attribute {
+    display: block;
+    color: transparent;
+    @include add-inline-icon(attribute-no);
+    &.attribute-yes{
+        @include add-inline-icon(attribute-yes);
+    }
+}
+
+ /* =======================================================================================
+   Tabs
+   ======================================================================================= */
+.tabbox{
+    margin-bottom: 30px;
+    .tabbox-contents{
+        padding: 30px 0;
+        background: #fff;
+        .tab-content{
+            background: #fff;
+        }
+    }
+}
+ul.tabs{
+    @include rem-property(height, 34);
+    @include line-height(34);
+    li{
+        width: 50%;
+        float: left;
+        @include rem-property(height, 44);
+        @include line-height(44);
+        a {
+            display: block;
+            position: relative;
+            @include rem-property(height, 44);
+            @include line-height(44);
+            text-align: center;
+            @extend %color-tab;
+            @include font-size(14);
+            @include border-radius(3px);
+        }
+        &:hover a{
+            @extend %color-tab-hover;
+            z-index: 11;
+            &:before{
+                border-left: 1px solid transparent;
+            }
+        }
+        &.selected a{
+            @extend %color-tab-selected;
+            z-index: 11;
+        }
+    }
+    &.tabs-3{
+        li{
+            width: 33.33339%;
+        }
+    }
+    &.tabs-4{
+        li{
+            width: 25%;
+        }
+    }
+    &.tabs-5{
+        li{
+            width: 20%;
+        }
+    }
+    &.tabs-big{
+        li{
+            @include rem-property(height, 45);
+            @include line-height(45);
+            a{
+                @include font-size(18);
+                @include rem-property(height, 45);
+                @include line-height(45);
+            }
+        }
+    }
+}
+
+.simpletabs{
+    @extend %clearfix;
+    li{
+        float: left;
+        @include rem-property(height, 25);
+        @include line-height(25);
+        a {
+            position: relative;
+            display: block;
+            @include rem-property(height, 25);
+            @include line-height(25);
+            @include font-size(16);
+            font-weight: bold;
+            padding-left: 25px;
+            color: $color_brand;
+        }
+        &.first a{
+            padding-left: 0;
+        }
+        &.last a:before{
+            display: none;
+        }
+        &:hover a, &.selected a{
+            span {
+                @include text-underline($color_brand);
+            }
+        }
+    }
+}
+
+
+ /* =======================================================================================
+   Messages
+   ======================================================================================= */
+
+//Validation messages
+%message-validation {
+    color: $color_inform_err;
+    @include font-size(11);
+    @include line-height($_form_row_height - 6);
+    border: 1px solid $color_inform_err;
+    padding: 2px 10px;
+    width: 150px;
+    position: absolute;
+    right: -180px;
+    top: 0;
+    background: #fff;
+    z-index: 50;
+    &:hover {
+        z-index: 100;
+    }
+
+    &:before{
+        content: "\00a0";
+        color: transparent;
+        overflow: hidden;
+        @include add-sprite($sprite: msg-error-arrow-left, $map: $sprite-main, $addDim: TRUE);
+        position: absolute;
+        left: - sprite-width($sprite-main, msg-error-arrow-left);
+        top: 8px;
+    }
+    .validation-pos-left &{
+        left: -180px;
+    }
+    .validation-pos-left &:before{
+        background: sprite($sprite-main, msg-error-arrow-right);
+        right: - sprite-width($sprite-main, msg-error-arrow-right);
+        left: auto;
+    }
+    .validation-pos-bottom & {
+        top: auto;
+        left: 0;
+        right: auto;
+        bottom: auto;
+        z-index: 51;
+        &:before {
+            @include add-sprite($sprite: msg-error-arrow-top, $map: $sprite-main, $addDim: TRUE);
+            right: auto;
+            left: auto;
+            bottom: auto;
+            top: - sprite-height($sprite-main, msg-error-arrow-top);
+        }
+    }
+}
+
+%message-validation-success {
+    color: $color_inform_succ;
+    width: 150px;
+    right: -180px;
+    border: 1px solid $color_inform_succ;
+
+    &:before{
+        @include add-sprite($sprite: msg-success-arrow-left, $map: $sprite-main, $addDim: TRUE);
+    }
+    .validation-pos-left &{
+        left: -180px;
+    }
+    .validation-pos-left &:before{
+        background: sprite($sprite-main, msg-success-arrow-right);
+    }
+}
+
+%message-validation-big {
+    padding: 50px 15px 15px;
+    text-align: center;
+    right: -190px;
+    top: -42px;
+    &:before{
+        top: 50%;
+        margin-top: -3px;
+    }
+    &:after{
+        content: "\00a0";
+        color: transparent;
+        overflow: hidden;
+        @include add-sprite($sprite: msg-error-icon, $map: $sprite-main, $addDim: TRUE);
+        position: absolute;
+        top: 14px;
+        left: 50%;
+        margin-left: -12px;
+    }
+
+    .validation-pos-left & {
+        left: -190px;
+        right: auto;
+    }
+}
+
+%message-validation-big-success {
+    &:after {
+        @include add-sprite($sprite: msg-success-icon, $map: $sprite-main, $addDim: TRUE);
+    }
+}
+
+//Global system messages
+%messages {
+    margin-bottom: 15px;
+    padding: 5px;
+    & > ul {
+        position: relative;
+        background: #fff;
+        padding: 15px 15px 15px 50px;
+        &:before {
+            content: "\00a0";
+            color: transparent;
+            overflow: hidden;
+            @include add-sprite($sprite: msg-error-icon, $map: $sprite-main, $addDim: TRUE);
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            margin-top: -12px;
+        }
+        li {
+            @include line-height(14);
+            margin: 0;
+        }
+    }
+    a {
+        text-decoration: underline;
+    }
+}
+%messages-success {
+    @extend %messages;
+    background: #fff url(../../default/images/messages-bg-success.png);
+    & > ul {
+        &:before {
+            @include add-sprite($sprite: msg-success-icon, $map: $sprite-main, $addDim: TRUE);
+        }
+    }
+    & li {
+        color: $color_inform_succ;
+    }
+}
+%messages-error {
+    @extend %messages;
+    background: #fff url(../../default/images/messages-bg-error.png);
+    & li {
+        color: $color_inform_err;
+    }
+}
+%messages-notice {
+    @extend %messages;
+    background: #fff url(../../default/images/messages-bg-notice.png);
+    & > ul {
+        &:before {
+            @include add-sprite($sprite: msg-notice-icon, $map: $sprite-main, $addDim: TRUE);
+        }
+    }
+    & li {
+        color: $color_brand;
+    }
+}
+
+.global-messages-wrapper, .messages_product_view {
+    height: 100%;
+    clear: both;
+    .messages {
+        @extend %full-page-width;
+    }
+}
+.global-messages-wrapper .messages {
+    padding-top: 15px;
+}
+
+.messages > li {
+    cursor: pointer;
+    
+    &.last {
+        margin-bottom: 0;
+    }
+}
+.messages .success-msg{
+    @extend %messages-success;
+}
+.messages .error-msg{
+    @extend %messages-error;
+}
+.messages .notice-msg{
+    @extend %messages-notice;
+}
+
+
+ /* =======================================================================================
+   Stickers
+   ======================================================================================= */
+.sticker {
+    @include height(20);
+    @include text($cfgBaseFontSize, 22, $color_sticker);
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 0 21px;
+
+    &.sticker-new {
+        background: $color_sticker_new_bg;
+    }
+    &.sticker-bestseller {
+        background: $color_sticker_bestseller_bg;
+        padding: 0 20px;
+    }
+}
+
+
+ /* =======================================================================================
+   Checklist
+   ======================================================================================= */
+%iconed-list {
+    li {
+        @include text(normal, 22, dark);
+
+        a {
+            @include text(normal, 22, dark);
+        }
+    }
+}
+ul.checklist {
+    @extend %iconed-list;
+    li {
+        @include add-inline-icon(checklist, before);
+    }
+}
+ul.arrow-list {
+    @extend %iconed-list;
+    li {
+        @include add-inline-icon(list-arrow, before);
+    }
+}
+ul.arrow-list-back {
+    @extend %iconed-list;
+    li {
+        @include add-inline-icon(list-arrow-back, before);
+    }
+}
+ul.plus-list {
+  @extend %iconed-list;
+  li {
+    @include add-inline-icon(link-addto, before);
+  }
+}
+
+ /* =======================================================================================
+   Benefit logos
+   ======================================================================================= */
+.benefit-logos {
+    @include rem-property(margin-bottom, 20);
+}
+.benefit-logo {
+    display: inline-block;
+
+    &.benefit-quality {
+        background: sprite($sprite-main, benefit-quality);
+        @include sprite-dimensions($sprite-main, benefit-quality);
+    }
+    &.benefit-price {
+        background: sprite($sprite-main, benefit-price);
+        @include sprite-dimensions($sprite-main, benefit-price);
+    }
+    &.benefit-availability {
+        background: sprite($sprite-main, benefit-availability);
+        @include sprite-dimensions($sprite-main, benefit-availability);
+    }
+    &.benefit-delivery {
+        background: sprite($sprite-main, benefit-delivery);
+        @include sprite-dimensions($sprite-main, benefit-delivery);
+    }
+}
+.benefit-logos {
+    @extend %clearfix;
+
+    p.lead {
+        float: left;
+        width: 200px;
+        overflow: hidden;
+        @include text(20, 24, darkest);
+        @include rem-property(margin-top, 18);
+    }
+    ul {
+        float: right;
+        width: 760px;
+
+        li {
+            float: left;
+            width: 20%;
+            margin-left: 5%;
+            text-align: center;
+
+            p.text {
+                @include text(15, normal, darkest);
+                @include rem-property(margin-top, 7);
+                padding: 0;
+            }
+        }
+    }
+}
+
+.steps-container {
+    position: relative;
+    
+    &.fixed-height {
+        @include height(45);
+    }
+    &.steps-2 {
+        $_title_width: 50;
+        .step-title {
+            width: percentage($_title_width / 100);
+
+            @for $i from 2 through 3 {
+                &.step-title-#{$i} {
+                    $_item_num: $i - 1;
+                    left: percentage(($_item_num * $_title_width) / 100);
+                }
+            }
+        }
+    }
+    &.steps-3 {
+        $_title_width: 33.35;
+        .step-title {
+            width: percentage($_title_width / 100);
+
+            @for $i from 2 through 3 {
+                &.step-title-#{$i} {
+                    $_item_num: $i - 1;
+                    left: percentage(($_item_num * $_title_width) / 100);
+                }
+            }
+        }
+    }
+    &.steps-4 {
+        $_title_width: 25;
+        .step-title {
+            width: percentage($_title_width / 100);
+
+            @for $i from 2 through 4 {
+                &.step-title-#{$i} {
+                    $_item_num: $i - 1;
+                    left: percentage(($_item_num * $_title_width) / 100);
+                }
+            }
+        }
+    }
+    li.section {
+        .step-title {
+            background: $color_top_section_bg;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: url('../../default/images/checkout-process-bg.png') repeat-x;
+            @include height($_checkout_step_height);
+            @include box-sizing(border-box);
+            border-top: 1px solid #d7d7d7;
+            border-bottom: 1px solid #d7d7d7;
+            padding-right: sprite-width($sprite-main, order-process-arrow);
+            text-align: center;
+            cursor: default;
+
+            h2 {
+                display: block;
+                padding: 0;
+                @include text(18, $_checkout_step_height, $color_darkest);
+            }
+            &:after {
+                content: "\00a0";
+                color: transparent;
+                overflow: hidden;
+                display: inline-block;
+                position: absolute;
+                top: -1px;
+                right: 0;
+                @include add-sprite($sprite: order-process-arrow, $map: $sprite-main, $addDim: TRUE);
+            }
+        }
+        
+        &.active .step-title {
+            background-color: rgb(28, 99, 161);
+            @include background-image(linear-gradient(rgb(28, 99, 161) 0%, rgb(1, 76, 141) 100%));
+            border-top-color: #2569a4;
+            border-bottom-color: #004b8d;
+            
+            &:after {
+                @include add-sprite($sprite: order-process-arrow-active, $map: $sprite-main, $addDim: TRUE);
+            }
+            &:before {
+                content: "\00a0";
+                color: transparent;
+                overflow: hidden;
+                display: inline-block;
+                position: absolute;
+                top: -1px;
+                left: - sprite-width($sprite-main, order-process-arrow-active-before);
+                @include add-sprite($sprite: order-process-arrow-active-before, $map: $sprite-main, $addDim: TRUE);
+            }
+            h2 {
+                color: $color_special_white;
+            }
+        }
+        &.first {
+            .step-title {
+                border-left: 1px solid #d6d6d6;
+            }
+            &.active .step-title {
+                border-left: 0;
+
+                &:before {
+                    content: '';
+                    display: none;
+                }
+            }
+        }
+        &.last {
+            .step-title {
+                border-right: 1px solid #d6d6d6;
+
+                &:after {
+                    content: '';
+                    display: none;
+                }
+            }
+            &.active .step-title {
+                border-right: 0;
+            }
+        }
+    }
+}
+.step-content {
+    padding: 23px 19px 30px;
+    background: $color_content_bg;
+
+    .account-create form.registration-form {
+        padding: 0;
+        border: 0;
+    }
+    .buttons-set {
+        @extend %clearfix;
+        margin: 0;
+
+        .link-back {
+            @include text(normal, 38, $color_normal, bold);
+
+            &:hover {
+                color: #fff;
+            }
+        }
+        button {
+            text-align: center;
+        }
+        .button-back {
+            float: left;
+            color: $color_dark;
+            border: $color_button_normal_border;
+        }
+        .button-next {
+            float: right;
+            padding: 0 94px;
+        }
+    }
+    .purchase-table {
+        background: $color_special_white;
+        @include font-size(12);
+        float: right;
+        width: 193px;
+        border: 1px solid $color_light;
+        padding: 13px 15px;
+
+        h4 {
+            @include font-size(12);
+            padding-bottom: 7px;
+            border-bottom: 1px solid $color_light;
+            margin-bottom: 5px;
+        }
+
+        table {
+            width: 100%;
+
+            tr.discount, tr.tax-row {
+                display: none;
+            }
+            td {
+                border: 0;
+                padding: 0;
+
+                &.a-right {
+                    text-align: right;
+                }
+            }
+            .price {
+                display: block;
+            }
+            .grand-total td {
+                padding-top: 9px;
+            }
+        }
+    }
+}
+
+.global-site-notice {
+    overflow: hidden;
+}
+
+%normal-box {
+    border: 1px solid $color_wishlist_list_item_border;
+    padding: 20px;
+    background: #fff;
+}
+
+// White backgrounds
+.cms-page-view, .category-layout-level2, .catalog-category-productlist, .catalog-category-layered, .catalogsearch-result-index, .catalog-product-compare-index, .customer-account-create, .contacts-index-index {
+    .main { 
+        @include rem-property(padding-top, 22);
+        @include rem-property(padding-left, $default_padding_small);
+        @include rem-property(padding-right, $default_padding_small);
+        @include rem-property(margin-bottom, $default_margin);
+        box-sizing: border-box;
+        background-color: $color_content_bg;
+    }
+}

@@ -1,0 +1,69 @@
+.cms-page-view, .cms-no-route {
+    .std {
+        p {
+            @include rem-property(padding-bottom, 10);
+        }
+        a {
+            color: $color_brand;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        ol li, ul li, dl dt, dl dd {
+            @include text(normal, normal, dark);
+            margin-bottom: 5px;
+        }
+        ol, ol.numeric {
+            list-style-position: inside;
+            list-style-type: decimal;
+            margin-left: 20px;
+        }
+        ul, ul.disc {
+            list-style-position: inside;
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        .footer-container ul, .footer-container ol {
+            list-style: none;
+            margin-left: 0;
+        }
+        table[border="0"] td {
+            border: 0;
+        }
+    }
+    .benefit-logos ul {
+        list-style: none;
+    }
+}
+.cms-form-block {
+    width: 48.5%;
+    overflow: hidden;
+
+    p {
+        @include font-size(12);
+    }
+}
+.cms-index-defaultnoroute, .cms-no-route-default, .restriction-index-stub {
+    .form-search, .header-meta-nav, .sticky-toolbar {
+        display: none !important;
+    }
+    .header-panel {
+        @include height(30);
+    }
+}
+.cms-page-view.cms-submit-custom-paper {
+    .std ul {
+        list-style: none;
+        margin-left: 0;
+    }
+    .success-msg {
+        @extend %messages-success;
+    }
+    .error-msg {
+        @extend %messages-error;
+    }
+    .notice-msg {
+        @extend %messages-notice;
+    }
+}

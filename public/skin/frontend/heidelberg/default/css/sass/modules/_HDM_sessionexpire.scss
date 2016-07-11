@@ -1,0 +1,43 @@
+.session-expire-bg {
+    background: #000;
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 10000;
+}
+.session-expire-box-wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10001;
+}
+.session-expire-box {
+    width: 500px;
+    height: 200px;
+    background: #fff;
+    margin: 0 auto;
+    padding: 40px;
+    text-align: center;
+
+    .session-expire-title {
+        @include text($fontSize: 18, $lineHeight: 22, $color: dark);
+    }
+
+    .session-expire-countdown {
+        @include text($fontSize: 18, $lineHeight: 22, $color: dark);
+        padding: 20px 0 40px;
+    }
+
+    .buttons-container {
+        .login {
+            float: left;
+        }
+        .logout {
+            float: right;
+        }
+    }
+}

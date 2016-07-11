@@ -1,0 +1,24 @@
+/****************************************************************************
+ * CONTAINS STORE SPECIFIC STYLING (NOT USED ANYWHERE ELSE) 
+ ****************************************************************************/
+.shopping-cart-bottom {
+  .totals {
+    table {
+      .grand-total {
+        td, + .copayment-grand-total td {
+          @include text(18, normal, $color_brand, bold);
+          border-top: 1px solid $color_light;
+          border-bottom: 1px solid $color_light;
+          padding: 13px 0 11px;
+        }
+        + .copayment-grand-total td {
+          border-bottom: 0;
+        }
+
+        + .copayment-grand-total td {
+          border-top: 2px solid $color_basketpage_totals_bg;
+        }
+      }
+    }
+  }
+}

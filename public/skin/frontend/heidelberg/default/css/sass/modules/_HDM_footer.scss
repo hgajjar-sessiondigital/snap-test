@@ -1,0 +1,377 @@
+.footer-container {
+    .footer-banners{
+        @extend %full-page-width;
+        @extend %clearfix;
+    }
+    
+    .footer-inner {
+        @extend %full-page-width;
+        @extend %clearfix;
+        height: 100%;
+        background: $color_content_bg;
+        padding: $default_padding + px;
+        box-sizing: border-box;
+    }
+
+    .newsletter {
+        background-color: $color_content_bg;
+        height: 60px;
+        @extend %full-page-width;
+
+        .footer-inner {
+            padding: 0 30px;
+        }
+
+        form {
+            @extend %clearfix;
+            padding: 15px 10px 0;
+        }
+
+        h4, .input-box, button, a.privacy {
+            float: left;
+        }
+        h4 {
+            line-height: normal;
+            padding: 0;
+            margin-top: 7px;
+            margin-right: 45px;
+            letter-spacing: -1px;
+            label {
+                color: $color_normal;
+                font-weight: normal;
+            }
+        }
+        .input-box {
+            margin-right: 15px;
+            position: relative;
+
+            input {
+                width: 341px;
+                height: 28px;
+                @include line-height(31);
+                padding: 0 9px;
+            }
+        }
+        button {
+            @extend %button-action;
+            width: 102px;
+            height: 28px;
+            @include line-height(28);
+            padding: 0;
+            margin-top: 1px;
+            margin-right: 32px;
+            text-align: center;
+            border: none;
+
+            &:hover {
+                border: none;
+            }
+        }
+        a.privacy {
+            @include text($fontSize: normal, $lineHeight: normal, $color: darkest);
+            text-decoration: underline;
+            margin-top: 5px;
+
+            &:hover {
+                color: $color_link_hover;
+            }
+        }
+        .newsletter-form-inner {
+            @extend %clearfix;
+            position: relative;
+            float: left;
+
+            .newsletter-form-extended {
+                background: $color_special_white;
+                display: none;
+                position: absolute;
+                top: 52px;
+                left: -21px;
+                z-index: 25;
+                padding: 20px;
+                @include single-box-shadow(0, 0, 5px, 1px, rgba(204, 204, 204, 0.4));
+
+                &:after {
+                    content: "\00a0";
+                    display: inline-block;
+                    background: sprite($sprite-main, 'myaccount-arrow');
+                    @include sprite-dimensions($sprite-main, 'myaccount-arrow');
+                    position: absolute;
+                    top: - sprite-height($sprite-main, 'myaccount-arrow');
+                    left: 50%;
+                    margin-left: - (sprite-width($sprite-main, 'myaccount-arrow')) / 2;
+                    z-index: 26;
+                }
+
+                &.open {
+                    display: block;
+                }
+                ul.form-list {
+                    position: relative;
+                }
+                .input-box {
+                    margin-right: 0;
+                }
+                .close-item {
+                    position: absolute;
+                    top: -5px;
+                    right: -5px;
+                    @include sprite-dimensions($sprite-main, 'menu-close');
+
+                    a {
+                        background: sprite($sprite-main, 'menu-close');
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                p.required {
+                    clear: both;
+                    float: left;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .sitemap {
+        margin-top: $default_margin + px;
+    }
+
+    .logo-footer {
+        display: none;
+    }
+
+    .footer-links {
+        @extend %clearfix;
+
+        > li {
+            float: left;
+
+            &.first {
+                width: 294px;
+                background: url('../../default/images/footer-company-right-shadow.png') no-repeat right top;
+                padding-right: 14px;
+                margin-right: 23px;
+
+                h4.heading {
+                    padding-bottom: 20px;
+                    color: $color_gray;
+                }
+
+                p {
+                    padding-bottom: 10px;
+                    color: $color_gray;
+                }
+
+                address {
+                    @include text($fontSize: normal, $lineHeight: normal, $color: $color_gray);
+                    padding-bottom: 13px;
+                }
+            }
+
+            ul {
+                @extend %clearfix;
+            }
+
+            li.col {
+                float: left;
+                margin-right: 20px;
+                width: 170px;
+
+                &.middle {
+                    width: 150px;
+                }
+
+                &.last {
+                    margin-right: 0;
+                }
+            }
+
+            h4.heading {
+                padding-bottom: 25px;
+                color: $color_normal;
+            }
+
+            a {
+                color: $color_link;
+
+                &:hover {
+                    color: $color_link_hover;
+                }
+            }
+
+            ul.links li {
+                float: none;
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+    .logos {
+        margin-top: 21px;
+        display: none;
+    }
+
+    .social {
+        @extend %clearfix;
+        margin-top: 9px;
+
+        li {
+            float: left;
+
+            &.last {
+                margin-right: 0;
+            }
+
+            a {
+                display: inline-block;
+                margin-right: 16px;
+            }
+        }
+
+        .facebook {
+            background: sprite($sprite-main, 'logo-social-facebook');
+            @include sprite-dimensions($sprite-main, 'logo-social-facebook');
+
+            &:hover {
+                background: sprite($sprite-main, 'logo-social-facebook-hover');
+            }
+        }
+        .youtube {
+            background: sprite($sprite-main, 'logo-social-youtube');
+            @include sprite-dimensions($sprite-main, 'logo-social-youtube');
+            margin-right: 15px;
+
+            &:hover {
+                background: sprite($sprite-main, 'logo-social-youtube-hover');
+            }
+        }
+        .xing {
+            background: sprite($sprite-main, 'logo-social-xing');
+            @include sprite-dimensions($sprite-main, 'logo-social-xing');
+            margin-top: 1px;
+            margin-right: 15px;
+
+            &:hover {
+                background: sprite($sprite-main, 'logo-social-xing-hover');
+            }
+        }
+        .twitter {
+            background: sprite($sprite-main, 'logo-social-twitter');
+            @include sprite-dimensions($sprite-main, 'logo-social-twitter');
+            margin-top: 1px;
+
+            &:hover {
+                background: sprite($sprite-main, 'logo-social-twitter-hover');
+            }
+        }
+        .google {
+            background: sprite($sprite-main, 'logo-social-google');
+            @include sprite-dimensions($sprite-main, 'logo-social-google');
+            margin-top: 1px;
+
+            &:hover {
+                background: sprite($sprite-main, 'logo-social-google-hover');
+            }
+        }
+        .linkedin {
+            background: sprite($sprite-main, 'logo-social-linkedin');
+            @include sprite-dimensions($sprite-main, 'logo-social-linkedin');
+            margin-top: 1px;
+
+            &:hover {
+                background: sprite($sprite-main, 'logo-social-linkedin-hover');
+            }
+        }
+    }
+
+    .trusted {
+        @extend %clearfix;
+
+        li {
+            float: left;
+            margin-right: 11px;
+
+            &.last {
+                margin-right: 0;
+            }
+
+            i {
+                display: inline-block;
+            }
+        }
+
+        .trusted-1 {
+            background: sprite($sprite-main, 'logo-trusted-1');
+            @include sprite-dimensions($sprite-main, 'logo-trusted-1');
+        }
+        .trusted-2 {
+            background: sprite($sprite-main, 'logo-trusted-2');
+            @include sprite-dimensions($sprite-main, 'logo-trusted-2');
+        }
+        .trusted-3 {
+            background: sprite($sprite-main, 'logo-trusted-3');
+            @include sprite-dimensions($sprite-main, 'logo-trusted-3');
+        }
+    }
+
+    .footer-bottom {
+        background: $color_footer_bottom_bg;
+        padding: 34px 0 57px;
+        @include font-size($cfgFontSizeNormal);
+        font-weight: bold;
+        color: $color_footer_bottom;
+        @extend %full-page-width;
+
+        a {
+            color: $color_footer_bottom;
+            @include font-size(13);
+            font-weight: normal;
+
+            &:hover {
+                @include text-underline($color_special_white);
+            }
+        }
+
+        .footer-inner {
+            background-color: $color-footer_bottom_bg;
+            color: $color-special_white;
+
+            padding: 0 $default_padding + px;
+
+            .footer-bottom-links {
+                float: left;
+
+                li {
+                    float: left;
+                    margin-right: 3px;
+
+                    &:after {
+                        content: '|';
+                        padding-left: 3px;
+                        display: inline-block;
+                        height: 11px;
+                        overflow: hidden;
+                    }
+
+                    &.last {
+                        padding-right: 0;
+                        margin-right: 0;
+
+                        &:after {
+                            content: "\00a0";
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        .copyright {
+            float: right;
+            @include font-size(13);
+            font-weight: normal;
+        }
+    }
+}

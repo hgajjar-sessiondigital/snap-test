@@ -1,0 +1,88 @@
+.spare-parts-ordering-form {
+    .main a {
+        color: $color_brand;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    .fieldset {
+        margin-bottom: 40px;
+
+        li {
+            margin-bottom: 10px;
+        }
+    }
+    .form-buttons {
+        text-align: left;
+    }
+    .ui-button {
+        @include text(normal, normal, dark, bold);
+        @include border-radius(0);
+        @extend %bg-button-normal;
+
+        &:hover, &:focus, &:active {
+            @extend %bg-button-normal-hover;
+            color: $color_special_white;
+        }
+    }
+    .ui-widget-header, .ui-widget-content {
+        border: $color_button_normal_border;
+        background: none;
+        padding: 10px;
+        position: relative;
+
+        .input-text {
+            width: 100%;
+            @include box-sizing(border-box);
+            @include height(26);
+            @include line-height(26);
+        }
+        .validation-advice {
+            right: -180px;
+        }
+        .qty-col .validation-advice {
+            left: -180px;
+        }
+    }
+    .ui-widget-header {
+        color: $color_brand;
+        font-weight: bold;
+    }
+    .appendGrid tbody td.last button.remove {
+        @extend %bg-button-normal;
+        @extend %button-xs;
+        @include add-button-icon(btn-trash, btn-trash-hover);
+        width: 27px;
+        @include height(25);
+        @include line-height(25);
+        padding: 0;
+        border: $color_button_normal_border;
+
+        &:hover {
+            @extend %bg-button-normal-hover;
+            border-color: $color_brand;
+        }
+        &:disabled, &:disabled:hover {
+            @extend %bg-button-normal;
+            @extend %button-xs;
+            @include add-button-icon(btn-trash, btn-trash);
+            border: $color_button_normal_border;
+            padding: 0;
+        }
+        span {
+            padding: 0;
+            text-indent: 0;
+            line-height: inherit;
+        }
+        .ui-icon-trash {
+            display: none;
+        }
+    }
+    .add-info {
+        text-align: left;
+    }
+    textarea[name="spareparts[additional_information]"] {
+        height: 70px;
+    }
+}

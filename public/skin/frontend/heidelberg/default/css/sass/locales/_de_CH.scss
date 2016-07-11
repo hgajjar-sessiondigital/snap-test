@@ -1,0 +1,38 @@
+/****************************************************************************
+ * CONTAINS THE de_CH LOCALE SPECIFIC STYLINGS
+ ****************************************************************************/
+#wishlist_product_popup_add_form .buttons-set{
+    bottom: -40px;
+}
+
+.product-addto-panel button.btn-cart {
+    padding: 0 10px;
+}
+
+.catalog-product-view .product-addto-panel button.btn-cart.btn-cart-quote {
+    padding: 0 5px;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.cart-table .cart-table-content.body .col.col-price,
+.cart-table .data-table-content.body .col.col-price,
+.data-table .cart-table-content.body .col.col-price,
+.data-table .data-table-content.body .col.col-price {
+    font-size: 11px;
+}
+
+.customer-account-area .company .data-table .col-edit,
+.cart-table .cart-table-content.header .col.col-price
+{
+    overflow: visible;
+}
+
+.cart-table .cart-table-content,
+.cart-table .data-table-content,
+.data-table .cart-table-content,
+.data-table .data-table-content{
+     .col.col-delete, .col.col-select {
+        overflow: visible;    
+     }
+}

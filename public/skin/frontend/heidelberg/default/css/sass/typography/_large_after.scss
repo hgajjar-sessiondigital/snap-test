@@ -1,0 +1,164 @@
+/****************************************************************************
+ * LARGE FONT VARIABLES, FONT FACES, AND FONT SIZES
+ ****************************************************************************/
+
+body {
+    font-size: $cfgFontSizeBig + px;
+}
+h1 {
+    @include font-size(30);
+}
+h2 {
+    @include font-size(24);
+}
+h3 {
+    @include font-size(22);
+}
+h4, h5, h6 {
+    @include font-size(18);
+}
+.text, p {
+    @include font-size($cfgFontSizeBig);
+    &.text-small {
+        @include font-size(13);
+    }
+    &.text-big {
+        @include font-size(17);
+    }
+}
+
+.footer-container {
+    .footer-links>li.first {
+        address {
+            @include font-size($cfgFontSizeBig);
+        }
+        a {
+            @include font-size($cfgFontSizeNormal);
+        }
+    }
+    .footer-bottom {
+        @include font-size($cfgFontSizeBig);
+    }
+}
+
+.benefit-logos {
+    p.lead {
+        @include font-size(24);
+    }
+    ul li p.text {
+        @include font-size(18);
+    }
+}
+
+input, select, textarea, button, input[type="text"], input[type="password"], select,
+.breadcrumbs-wrapper .breadcrumbs li, .account-create .registration-intro p,
+.checkout-onepage-index .opc .step .registration-intro p,
+.cms-form-block p, .customer-account-area .my-account-cms-block p, .account-create .form-list label, p.required, .fieldset p.required,
+.sticky-toolbar .sticky-toolbar-item-content p,
+.nav-container li.level0.level-top ul.dropdown li.level1 a,
+ul.checklist li a, ul.arrow-list li a, ul.arrow-list-back li a, ul.plus-list li a,
+.block-layered-nav .filters-container.others dd li a,
+.block-layered-nav .filters-container.category dd>.category-filters>li>.category-filters>li>.parent-category>a,
+.catalog-category-view .products-list>li h2.product-name span.product-ids,
+.catalogsearch-result-index .products-list>li h2.product-name span.product-ids,
+.catalog-category-view .products-list>li .actions label,
+.catalogsearch-result-index .products-list>li .actions label,
+.box-collateral .box-content div.item-inner .more-details a,
+.product-section-bottom-wrapper .product-section-bottom .product-documents ul li a,
+.product-section-top-wrapper .product-section-top .product-main-info .product-ids,
+.product-section-top-wrapper .product-section-top .product-main-info .product-unit,
+.box-collateral .box-content div.item-inner .product-name span.product-ids,
+.box-collateral .box-content div.item-inner p.product-unit,
+.top-cart.sticky-toolbar-item-content .mini-products-list .product-details .product-name a,
+.top-cart.sticky-toolbar-item-content .mini-products-list .product-details .product-name span,
+.top-cart.sticky-toolbar-item-content .mini-products-list .product-details p, .no-price,
+.cart-table .cart-table-content.header .col, .cart-table .data-table-content.header .col,
+.data-table .cart-table-content.header .col, .data-table .data-table-content.header .col,
+.cart-table .cart-table-content.body h2, .cart-table .cart-table-content.body h3,
+.cart-table .data-table-content.body h2, .cart-table .data-table-content.body h3,
+.data-table .cart-table-content.body h2, .data-table .cart-table-content.body h3,
+.data-table .data-table-content.body h2, .data-table .data-table-content.body h3
+.cart-table .cart-table-content.footer a.icon-link, .cart-table .data-table-content.footer a.icon-link,
+.data-table .cart-table-content.footer a.icon-link, .data-table .data-table-content.footer a.icon-link,
+.additional-information label, .additional-information span.label,
+.step-content .buttons-set .link-back, .data-table th, td,
+.checkout-onepage-index .opc a.icon-link, .checkout-onepage-success .opc a.icon-link,
+.customer-account-area .col2-set .info-box .box-title, .customer-account-area .col2-set .info-box .box-content,
+.customer-account-area .form-list label {
+    @include font-size($cfgFontSizeBig);
+}
+
+.notice-cookie .notice-text p, .notice-successor .notice-text p, .store-switcher .notice-text p,
+.notice-cookie button, .notice-successor button, .store-switcher button,
+.validation-advice, .toast-item,
+.block-layered-nav .filters-container.category dd>.category-filters>li>.category-filters>li .category-filters a,
+.catalog-category-view .products-list>li .actions .no-price,
+.catalog-category-view .products-list>li .actions .product-tax,
+.catalog-category-view .products-list>li .actions .product-unit-price,
+.catalogsearch-result-index .products-list>li .actions .no-price,
+.catalogsearch-result-index .products-list>li .actions .product-tax,
+.catalogsearch-result-index .products-list>li .actions .product-unit-price,
+.shopping-cart-bottom .totals table td,
+.header-container .header-panel .welcome-msg {
+    @include font-size(13);
+}
+
+.nav-container li.level0.level-top a.level-top, .nav-container li.level0.level-top ul.dropdown li.level1>a {
+    @include font-size(15);
+}
+.nav-container li.level0.level-top ul.dropdown li.level1 li.category a:before {
+    top: 2px;
+}
+
+.sticky-toolbar .sticky-toolbar-item-content.consultant .consultant-info .consultant-email,
+.header .customer-account-navigation .block-title,
+.customer-account-navigation .block-content li a {
+    @include font-size(16);
+}
+
+.form-list label, .simpletabs li a,
+.catalog-category-view .category-description, .catalogsearch-result-index .category-description,
+.block-layered-nav .filters-container .filter-container-name,
+.block-layered-nav .filters-container.others dt.filter-name,
+.block-layered-nav .filters-container.category dd>.category-filters>li>.parent-category>a,
+.toolbar, .box-collateral .box-content div.item-inner .product-name a,
+.top-cart.sticky-toolbar-item-content .mini-products-list .product-price .price,
+.top-cart.sticky-toolbar-item-content .subtotal,
+.checkout-cart-index .cart legend,
+.checkout-onepage-index .opc .step p, .checkout-onepage-success .opc .step p,
+.loading-animation-box .loading-animation-text p,
+.checkout-onepage-success .opc .page-title h1 {
+    @include font-size(17);
+}
+
+.catalog-product-view .product-description {
+    @include font-size(18);
+}
+
+.category-list>li h3.category-list-name {
+    @include font-size(19);
+}
+
+.page .page-title h1, .catalog-category-view .top-categories-wrapper .top-categories ul.tabs li,
+.catalog-category-view .top-categories-wrapper .top-categories ul.tabs li a,
+.catalogsearch-result-index .top-categories-wrapper .top-categories ul.tabs li,
+.catalogsearch-result-index .top-categories-wrapper .top-categories ul.tabs li a,
+.catalog-category-view .products-list>li h2.product-name a,
+.catalogsearch-result-index .products-list>li h2.product-name a,
+.top-cart.sticky-toolbar-item-content .title,
+.sticky-toolbar .sticky-toolbar-item-content.mini-shopping-list-wrapper p.title,
+.customer-account-navigation .block-title,
+.nav-container li.level0.level-top.label .text,
+.checkout-onepage-index .opc li.section .step-title h2, .checkout-onepage-success .opc li.section .step-title h2,
+.shopping-cart-bottom .totals table .subtotal td, .shopping-cart-bottom .totals table .grand-total td,
+.customer-account-area .profile-form h2.legend {
+    @include font-size(22);
+}
+
+.category-list-title, .box-collateral>h3 {
+    @include font-size(24);
+}
+
+.product-section-top-wrapper .product-section-top .product-main-info .product-name>h1 {
+    @include font-size(30);
+}

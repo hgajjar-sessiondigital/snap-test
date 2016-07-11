@@ -1,0 +1,28 @@
+/****************************************************************************
+ * CONTAINS STORE SPECIFIC STYLING (NOT USED ANYWHERE ELSE) 
+ ****************************************************************************/
+
+.data-table.wishlist-product-list .data-table-content {
+
+    &.header {
+        padding-left: 15px;
+        padding-right: 10px;
+    }
+
+    &.body .row {
+        margin-left: 15px;
+        margin-right: 10px;
+    }
+
+    .col.col-delete {
+        margin-right: 5px;
+    }
+
+    .col.col-select {
+        width: 59px;
+    }
+}
+
+.header-container .header-panel .header-message-container {
+    margin-right: 125px;
+}

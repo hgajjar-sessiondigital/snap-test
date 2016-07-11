@@ -1,0 +1,16 @@
+/****************************************************************************
+ * CONTAINS STORE SPECIFIC STYLING (NOT USED ANYWHERE ELSE) 
+ ****************************************************************************/
+html.windows7.ie11, html.windows7.ie11 body {
+    font-family: sans-serif !important;
+}
+
+.simpletabs li a {
+    padding-right: 20px;
+}
+.customer-account-area .tiles ul li.tile{
+    height: 180px;
+    p {
+        height: 87px;
+    }
+}

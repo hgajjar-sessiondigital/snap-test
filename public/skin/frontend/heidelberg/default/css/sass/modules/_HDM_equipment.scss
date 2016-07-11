@@ -1,0 +1,66 @@
+.customer-account-area {
+    ul.plus-list {
+        a.register-link {
+            color: $color_brand;
+            font-weight: bold;
+        }
+    }
+}
+.equipment-popup{
+    width: 400px;
+}
+.equipment-select-wrapper.form-list.form-list-cols{
+    margin-bottom: 10px;
+    background: #FFF url("../../default/images/messages-bg-error.png");
+    max-width: 100%;
+    padding: 15px;
+    &.ok{
+        background: #FFF url("../../default/images/messages-bg-success.png");
+    }
+    li{
+        padding: 15px 2%;
+        margin-bottom: 0;
+        background: #fff;
+        label{
+            width: 40%;
+        }
+        .input-box{
+            width: 50%;
+            margin-bottom: 0;
+        }
+        p.note {
+            margin: 0;
+            padding: 5px 0 0 0;
+            text-align: center;
+        }
+    }
+}
+.cart-table .cart-table-content.body .row.spare-part-cartitem{
+    border: 2px solid $color_inform_succ;
+    margin: 5px;
+    padding: 11px 13px 16px 13px;
+    .spare-part-warning {
+        font-weight: bold;
+        background: $color_inform_succ;
+        color: white;
+        padding: 0 13px;
+        position: relative;
+        top: -11px;
+        left: -13px;
+        width: 100%;
+    }
+}
+
+.equipment-details-block{
+    padding: 20px;
+    .equipment-table{
+        .data-table-content.header{
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .data-table-content.body .row{
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}

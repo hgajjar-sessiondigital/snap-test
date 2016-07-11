@@ -1,0 +1,34 @@
+@media print {
+    .checkout-cart-index, .wishlist-index-index, .checkout-onepage-index {
+        .global-site-notices, .sticky-toolbar, .header-panel, .nav-container,
+        .cart-table-content.footer, .cart-table-content .col-delete button,
+        .shopping-cart-bottom .buttons-set, .box-collateral, .deals,
+        .footer-container, .additional-information button {
+            display: none;
+        }
+    }
+    .wishlist-index-index {
+        .col-left, .col-delete, .col-select, .handle-wrapper, .delete-shopping-list,
+        .print-link, .select-all, .wishlist-detail-edit-button, .back-to-wishlists {
+            display: none;
+        }
+        .col-main {
+            float: none;
+            width: 100%;
+        }
+        .data-table.wishlist-product-list .data-table-content {
+            .col.col-name {
+                width: 694px;
+
+                > .product-name {
+                    width: 90%;
+                }
+            }
+        }
+    }
+    .checkout-onepage-index {
+        .opc-progress-container, .step-title, .review-order-details .change-link {
+            display: none;
+        }
+    }
+}

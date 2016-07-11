@@ -1,0 +1,62 @@
+.catalog-product-compare-index {
+    #product_comparison_container {
+        $cell_padding_right: 30;
+        overflow-x: scroll;
+
+        #product_comparison {
+            td, th {
+                border-left: none;
+                border-right: none;
+                border-top: none;
+            }
+
+            th.label, td.product {
+                padding: $cell_padding_right+px $cell_padding_right+px $cell_padding_right+px 0;
+
+                &.product-ids {
+                    padding-top: 15px;
+                }
+
+                &.description {
+                    @include text(12, normal, $color_description_text);
+                }
+
+                &.attr-less-space {
+                    padding-top: 13px;
+                    padding-bottom: 13px;
+                }
+            }
+
+            th.label {
+                @include text(14, normal, $color_layered_nav, bold);
+                padding-right: 10px;
+                border-bottom: 1px solid $color_light;
+            }
+
+            td.product {
+                h2 {
+                    padding-top: 25px;
+                    padding-bottom: 0;
+                    a {
+                        @include text(18, normal, $color_brand, bold);
+                    }
+                }
+            }
+
+            th.product-name, td.product-name {
+                padding-top: 0;
+            }
+
+            td.button-close {
+                @include rem_property(padding-right, $cell_padding_right);
+                border-bottom: none;
+                text-align: right;
+                a {
+                    display: inline-block;
+                    @include sprite-dimensions($sprite-main, 'menu-close-active');
+                    background: sprite($sprite-main, 'menu-close-active');
+                }
+            }
+        }
+    }
+}

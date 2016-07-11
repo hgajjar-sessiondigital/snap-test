@@ -1,0 +1,28 @@
+/* ***************************************************************************************
+   Mixins for media queries
+   *************************************************************************************** */
+
+@mixin respond-to($media) {
+    $em_value : ($media / 16) + em;
+    @media only screen and (min-width: $em_value) {
+        @content;
+    }
+}
+
+@mixin respond-to-mobile() {
+    @include respond-to($width_mobile) {
+        @content;
+    }
+}
+
+@mixin respond-to-tablet() {
+    @include respond-to($width_tablet) {
+        @content;
+    }
+}
+
+@mixin respond-to-desktop() {
+    @include respond-to($width_desktop) {
+        @content;
+    }
+}

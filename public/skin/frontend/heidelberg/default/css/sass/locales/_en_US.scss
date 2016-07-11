@@ -1,0 +1,34 @@
+/****************************************************************************
+ * CONTAINS THE en_US LOCALE SPECIFIC STYLINGS
+ ****************************************************************************/
+
+.cart-table .cart-table-content, .data-table .data-table-content{
+    &.body .price::first-letter{
+        padding-right: 4px;
+    }
+}
+
+.shopping-cart-bottom .totals table .price::first-letter,
+.step-content .purchase-table table .price::first-letter,
+.shopping-cart-bottom .totals table .price::first-letter
+{
+    padding-right: 4px;
+}
+
+.catalog-category-view, .catalogsearch-result-index {
+    .products-list > li .actions .price-box .price::first-letter
+    {
+        padding-right: 4px;
+    }
+}
+.checkout-onepage-index, .checkout-onepage-success {
+    .opc {
+        .purchase-table table,
+        .shipping-methods.shipping-methods .price-container
+        {
+            .price::first-letter{
+                padding-right: 4px;
+            }    
+        }    
+    }
+}

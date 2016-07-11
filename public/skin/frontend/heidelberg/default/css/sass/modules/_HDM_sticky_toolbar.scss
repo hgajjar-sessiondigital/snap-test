@@ -1,0 +1,258 @@
+$_sticky_toolbar_item_width: 43;
+$_sticky_toolbar_item_height: 43;
+$_sticky_toolbar_item_height_with_borders: 45;
+$_number_of_sticky_items: 3;
+
+.sticky-toolbar {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    margin-top: -($_number_of_sticky_items * $_sticky_toolbar_item_height_with_borders) + px;
+    z-index: 100;
+    
+
+    .sticky-toolbar-item {
+        position: relative;
+        margin-top: -1px;
+    }
+    .sticky-toolbar-item-button {
+        @extend %bg-button-normal;
+        background: #fff;
+        border: 1px solid $color_border_light;
+        display: block;
+        @include height($_sticky_toolbar_item_height);
+        @include line-height($_sticky_toolbar_item_height);
+        width: $_sticky_toolbar_item_width + px;
+        padding: 0 !important;
+        z-index: 101;
+        outline: 0;
+        cursor: pointer;
+
+        &:hover {
+            background: $_color_gray_5;
+        }
+
+        &.active {
+            background: $color_special_white;
+        }
+        &.disabled {
+            cursor: default;
+            &:hover {
+                @extend %bg-button-normal;
+                background: #fff;
+            }
+        }
+        &.shopping-cart {
+            @include add-inline-icon(btn-basket-normal);
+            @include border-top-left-radius(3px);
+
+            &:hover {
+                // @include add-inline-icon(btn-basket-hover);
+            }
+
+            &.disabled, &.disabled:hover {
+                @include add-inline-icon(btn-basket-disabled);
+            } 
+
+            &.active:hover{
+                // @include add-inline-icon(btn-basket-normal);
+            }
+        }
+        &.shopping-list {
+            @include add-inline-icon(btn-shoppinglist);
+
+            &:hover {
+                // @include add-inline-icon(btn-shoppinglist-hover);
+            }
+
+            &.disabled, &.disabled:hover {
+                @include add-inline-icon(btn-shoppinglist-disabled);
+            } 
+
+            &.active:hover{
+                // @include add-inline-icon(btn-shoppinglist);
+            }
+        }
+        &.consultant {
+            @include add-inline-icon(btn-consultant);
+            @include border-bottom-left-radius(3px);
+            &:hover {
+                // @include add-inline-icon(btn-consultant-hover);
+            }
+
+            &.disabled, &.disabled:hover {
+                @include add-inline-icon(btn-consultant-disabled);
+            }
+
+            &.active:hover{
+                // @include add-inline-icon(btn-consultant);
+            }
+        }
+        &.hdassistant {
+            @include add-inline-icon(btn-hdassistant);
+        }
+        &.comparison {
+            @include add-inline-icon(btn-comparison);
+
+            &:hover {
+                // @include add-inline-icon(btn-comparison-hover);
+            }
+
+            &.disabled, &.disabled:hover {
+                @include add-inline-icon(btn-comparison-disabled);
+            }
+
+            &.active:hover{
+                // @include add-inline-icon(btn-comparison);
+            }
+        }
+        &.quantity-calculator {
+            @include add-inline-icon(btn-calculator);
+        }
+        &:before {
+            left: 50% !important;
+            margin-left: -(sprite-width($sprite-icon, btn-basket-normal)) / 2;
+        }
+        &.active + .sticky-toolbar-item-content {
+            display: block;
+        }
+    }
+    .sticky-toolbar-item-content {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: $color_special_white;
+        border: 1px solid $color_border_light;
+        z-index: 100;
+        width: 374px;
+        @include single-box-shadow(0, 8px, 16px, 0, rgba(4, 8, 12, 0.25));
+        @include text(normal, normal, darkest);
+
+        .inner-wrapper {
+            padding: 15px 59px 15px 15px;
+        }
+        p {
+            @include text(normal, normal, darkest);
+            padding: 0;
+        }
+        .item-list {
+            max-height: 200px;
+            overflow-y: auto;
+            margin: 12px 0;
+        }
+        &.consultant {
+            max-height: 300px;
+
+            .consultant-image {
+                float: left;
+                margin-right: 10px;
+                margin-bottom: 16px;
+                width: 54px;
+            }
+            p.consultant-name {
+                @include text(normal, normal, darkest, bold);
+                margin-top: 7px;
+            }
+            .consultant-desc {
+                clear: both;
+            }
+            .consultant-info {
+                margin-top: 2px;
+                background: $color_sticky_consultant_bg;
+
+                .consultant-phone {
+                    @include add-inline-icon(icon-phone);
+                    padding-left: 33px;
+
+                    &:before {
+                        top: 8px;
+                    }
+                    .consultant-phone-number {
+                        @include font-size(18);
+                        @include line-height(22);
+                        @include text(18, 22, darkest);
+                    }
+                }
+                .consultant-email {
+                    @include font-size(13);
+                    @include add-inline-icon(icon-email);
+                    margin: 11px 0 3px;
+                    padding-left: 35px;
+
+                    &:before {
+                        top: 1px;
+                    }
+                }
+                a {
+                    color: $color_brand;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+            .consultant-footer {
+                padding: 11px 59px 9px 15px;
+            }
+        }
+        &.mini-shopping-list-wrapper, &.mini-compare-list-wrapper {
+            max-height: 329px;
+            .inner-wrapper {
+                padding: 20px 67px 24px 23px;
+            }
+            p.title {
+                @include text(18, normal, $color_brand);
+                padding-bottom: 5px;
+                border-bottom: 1px solid $color_minicart_border;
+            }
+            .wishlist-list, .compare-list {
+                width: 278px;
+                max-height: 225px;
+                overflow-y: auto;
+                margin: 12px 0;
+            }
+        }
+        &.mini-shopping-list-wrapper{
+            top: -44px; 
+        }
+        &.mini-compare-list-wrapper{
+            top: -88px;
+            .compare-list {
+                .item {
+                    border-bottom: 1px solid $color_border_light; 
+                    .product-name{
+                        @include line-height(22);
+                        a {
+                            @include font-size(14);
+                            font-weight: bold;
+                            color: $color_dark;
+                        }
+                        .sku{
+                            font-weight: normal;
+                            color: $color_normal;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    a.contact-form-link {
+        @include add-inline-icon();
+        @include text(normal, 16, darkest);
+
+        &:hover {
+            color: $color_brand;
+        }
+    }
+    .cart-message{
+        position: absolute;
+        top: 0;
+        left: 0;
+        .validation-advice{
+            margin-top: 0;
+            width: 250px;
+            left: -300px;
+        }    
+    } 
+}

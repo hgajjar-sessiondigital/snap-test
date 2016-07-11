@@ -1,0 +1,301 @@
+.quantity-calculator-banner {
+    display: inline-block;
+    cursor: pointer;
+    margin: 20px 0;
+    color: $color_black;
+
+    p {
+        padding: 0;
+        margin: 0;
+    }
+    a {
+        color: $color_black;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    .calculator-icon {
+        display: inline-block;
+        @include add-inline-icon(btn-calculator);
+
+        &:before {
+            left: 8px;
+        }
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.quantity-calculator-form {
+    color: $color_black;
+
+    table {
+        width: 100%;
+    }
+    td {
+        border: 0;
+        padding: 10px 15px 0;
+        vertical-align: middle;
+    }
+    tr.first-row td {
+        padding-bottom: 5px;
+    }
+    tr.last-row td {
+        padding-bottom: 15px;
+    }
+    tr.title-row td {
+        @include font-size(20);
+        font-weight: bold;
+        color: $color_brand;
+        padding: 5px 15px 15px;
+    }
+    tr.button-row td {
+        padding: 0;
+    }
+    tr.calculator-warning-row {
+        display: none;
+
+        td {
+            padding-top: 0;
+        }
+    }
+    .cboxFooter tr.title-row td {
+        @include font-size(16);
+    }
+    .col-1 {
+        font-weight: bold;
+        width: 136px;
+    }
+    .col-2, .col-3 {
+        width: 116px;
+    }
+    .buttons-set {
+        text-align: right;
+        margin: 20px 0 0;
+
+        .button {
+            font-weight: normal;
+            @include height(26);
+            @include line-height(26);
+        }
+    }
+    input.input-text {
+        width: 117px;
+        @include height(24);
+        @include line-height(24);
+        padding: 0 4px;
+    }
+    .result-field {
+        border: 0;
+        font-weight: bold;
+        color: $color_brand;
+        display: inline-block;
+    }
+    .calculator-warning {
+        background: #fff url(../../default/images/messages-bg-notice.png);
+        @extend %messages;
+        margin: 15px 0 0;
+
+        ul:before {
+            @include add-sprite($sprite: msg-notice-icon, $map: $sprite-main, $addDim: TRUE);
+        }
+        li, p {
+            color: $color_brand;
+            margin: 0;
+            padding: 0;
+        }
+    }
+    .coated-cell.highlighted,
+    .uncoated-cell.highlighted {
+        background: $color_lightest;
+    }
+    .suggested-row {
+        display: none;
+
+        .input-box {
+            float: left;
+        }
+        .buttons-set {
+            margin: 0 0 0 50px;
+            display: none;
+        }
+    }
+    .main-result-row {
+        display: none;
+    }
+}
+
+.color-manager {
+    .cms-block p {
+        @include font-size(14);
+        @include line-height(26);
+        padding: 0;
+    }
+    a {
+        color: $color_brand;
+    }
+    &.catalog-category-view .products-list > li {
+        overflow: visible;
+    }
+    &.catalog-category-view .products-list>li .desc {
+        @include height(36);
+    }
+}
+.colormanager__filters {
+    margin-bottom: 30px;
+}
+.color-manager-filter {
+    .form-list {
+        max-width: none;
+
+        label {
+            color: $color_brand;
+            @include font-size(13);
+            @include line-height(21);
+        }
+        li.control {
+            margin-bottom: 4px;
+        }
+        &.form-list-radio .input-box.last-radio-group .validation-advice {
+            display: none;
+        }
+    }
+    .input-box.search {
+        @extend %clearfix;
+        margin-bottom: 30px;
+
+        input.input-text {
+            width: 238px;
+            float: left;
+            @include height(28);
+            @include line-height(28);
+            padding: 0 10px;
+        }
+        button.button {
+            float: left;
+            margin-left: 16px;
+            @include height(30);
+            @include line-height(30);
+        }
+        .validation-advice {
+            bottom: -25px;
+        }
+        p.required {
+            float: right;
+            @include line-height(30);
+            margin: 0;
+            display: none;
+        }
+    }
+    p {
+        padding: 0;
+        @include font-size(14);
+        @include line-height(26);
+    }
+    .form-list-radio {
+        .field {
+            @extend %clearfix;
+        }
+        .input-box {
+            @include rem-property(margin-bottom, 3);
+        }
+        .control {
+            @extend %clearfix;
+
+            .input-box, label {
+                padding: 0;
+            }
+            .input-box {
+                margin-right: 10px;
+                @include line-height(20);
+            }
+            .input-label {
+                float: left;
+                width: 80%;
+            }
+        }
+    }
+    label.step-title {
+        @include font-size(14);
+        font-weight: bold;
+        color: $color_dark;
+        cursor: text;
+        margin-bottom: 10px;
+
+        &.required:after {
+            color: $color_dark;
+        }
+    }
+    .accordion-title {
+        @include font-size(16);
+        @include height(45);
+        @include line-height(45);
+        background: $color_lightest;
+        font-weight: bold;
+        margin-bottom: 4px;
+        cursor: pointer;
+        display: none;
+        @include add-inline-icon(icon-accordion-default);
+        padding: 0 20px;
+
+        &:before {
+            left: auto;
+            right: 20px;
+            top: 2px;
+        }
+        &.visible {
+            display: block;
+        }
+        &.open {
+            background: $color_brand;
+            color: $color_special_white;
+            cursor: text;
+            @include add-inline-icon(icon-accordion-open);
+            padding: 0 20px;
+
+            &:before {
+                left: auto;
+                right: 20px;
+                top: 2px;
+            }
+            + ul.colormanager__filter-step {
+                display: block;
+            }
+        }
+    }
+    .colormanager__filter-step {
+        display: none;
+        padding: 20px;
+    }
+    .next-button-row {
+        margin: 30px 0 0;
+
+        p {
+            margin-bottom: 5px;
+        }
+    }
+}
+.colormanager__no-result,
+.colormanager__too-many-results,
+.colormanager__result {
+    display: none;
+}
+.colormanager__too-many-results,
+.colormanager__no-result {
+    background: #fff url(../../default/images/messages-bg-notice.png);
+    @extend %messages;
+    margin-bottom: 30px;
+
+    ul:before {
+        @include add-sprite($sprite: msg-notice-icon, $map: $sprite-main, $addDim: TRUE);
+    }
+}
+.colormanager__result  {
+    @extend %clearfix;
+
+    .category-products {
+        float: right;
+    }
+}

@@ -1,0 +1,177 @@
+/****************************************************************************
+ * DEFAULT COLOR PALETTE (BLUE)
+ ****************************************************************************/
+
+// Colors
+// Grays
+$_color_gray_5: #ededed;
+$_color_gray_10: #ccc;
+$_color_gray_20: #a8b1b6;
+$_color_gray_40: #7d838b;
+$_color_gray_60: #60656b;
+$_color_gray_80: #414549;
+$_color_gray_bg: #e8e9ee;
+$_color_black: #000;
+
+// HDM colors
+$_color_hdm_blue: #004178;
+$_color_hdm_cyan: #00a0e6;
+$_color_hdm_green: #009b3c;
+$_color_hdm_yellow: #ffc800;
+
+// HDM alt colors
+$_color_hdm_darkblue_alt: #006e9b;
+$_color_hdm_lightblue_alt: #78cdeb;
+$_color_hdm_red_alt: #e21f23;
+$_color_hdm_green_alt: #96c33c;
+$_color_hdm_lightyellow_alt: #ffe60a;
+
+
+
+// Used colors
+$color_brand: $_color_hdm_blue;
+$color_brand_alt: #a8b1b6;
+$color_brand_alt2: #004b8d;
+
+$color_special: #5f8ab7;
+$color_special_alt: #4a6f91;
+$color_special_alt2: #579596;
+$color_special_white: #fff;
+
+$color_black: $_color_black;
+$color_darkest: $_color_black;
+$color_dark: $_color_gray_80;
+$color_normal: $_color_gray_60;
+$color_light: $_color_gray_40;
+$color_lightest: $_color_gray_20;
+$color_gray: $_color_gray_80;
+
+$color_inform_succ: #55a30f;
+$color_inform_warn: #ff9933;
+$color_inform_err: #cc3333;
+
+// Background colors
+$color_body_bg: $_color_gray_bg;
+$color_box_bg: $_color_gray_bg;
+
+// Borders
+$color_border: $_color_gray_20;
+$color_border_light: $_color_gray_10;
+
+// Text colors
+$color_text: $color_dark;
+$color_text_headline: $color_darkest;
+$color_text_headline_highlighted: $color_brand;
+$color_footer_bottom: $color_special_white;
+$color_header_cookie_text: $color_special_white;
+$color_input_disabled: $color_light;
+$color_label_disabled: $color_light;
+$color_pagination_current: $color_normal;
+$color_layered_nav: #4d4b4c;
+$color_layered_nav_lvl3plus: #999;
+$color_required: #014683;
+$color_customer_account_links: #4d4b4c;
+$color_order_status_in_progress: #ff9933;
+$color_order_status_sent: #55a30f;
+$color_beta_phase_text_default: #AFAFAF;
+$color_description_text: #666;
+
+// link colors
+$color_link: $_color_hdm_darkblue_alt;
+$color_link_hover: $_color_hdm_blue;
+
+// buttons
+$color_cookie_button_bg_ok: $color_lightest;
+$color_cookie_button_bg_hover: $color_light;
+$color_cookie_button_text: $color_dark;
+
+$color_button_normal_text: $color_light;
+$color_button_normal_text_hover: #fff;
+$color_button_normal_border: 1px solid $_color_gray_bg;
+$color_button_normal_border_hover: 1px solid $color_normal;
+$color_button_action_text: #fff;
+$color_button_action_text_hover: #fff;
+$color_button_action_border: 1px solid $color_brand;
+$color_button_action_border_hover: 1px solid $color_brand;
+$color_button_disabled_text: $_color_gray_10;
+$color_button_disabled_bg: $_color_gray_5;
+$color_button_disabled_border: 1px solid $_color_gray_5;
+$color_minicart_border: #d7d7d7;
+
+// backgrounds
+$color_default_bg: $_color_gray_bg;
+$color_footer_bottom_bg: $_color_hdm_blue;
+$color_header_switcher_menu: $color_special_white;
+$color_main_menu_bg: $color_special_white;
+$color_main_dropdown_menu_bg: $color_special_white;
+$color_sticker_new_bg: #55a30f;
+$color_sticker_bestseller_bg: #ff9933;
+$color_category_filter_active_bg: #e5edf3;
+$color_category_filter_active_border: $color_light;
+$color_filter_bg: #fbfbfb;
+$color_top_section_bg: $color_default_bg;
+$color_basketpage_totals_bg: #f6f6f6;
+$color_sticky_consultant_bg: #e5e5e5;
+$color_review_order_details_bg: #f6f6f6;
+$color_my_account_tile_bg: $color_brand;
+$color_beta_phase_bg_default: #424242;
+$color_content_bg: $color_special_white;
+
+%bg-button-normal {
+	background-color: $_color_gray_bg;
+}
+%bg-button-normal-reverse {
+	background-color: $_color_gray_bg;
+}
+%bg-button-normal-hover {
+	background-color: $color_light;
+}
+%bg-button-action {
+	background-color: $color_brand;
+}
+%bg-button-action-reverse {
+	background-color: $_color_hdm_darkblue_alt;
+}
+%bg-button-action-hover {
+	background-color: $_color_hdm_darkblue_alt;
+}
+
+//Form
+$color_form_input_border: #ccc;
+$color_form_input_border_hover: $color_brand;
+$color_form_input_border_focus: $color_brand;
+
+//Tabs
+%color-tab {
+	background: $color_default_bg;
+	color: $color_brand;
+}
+%color-tab-hover {
+	background: $color_brand;
+	color: #fff;
+}
+%color-tab-selected {
+	background: $color_brand;
+	color: #fff;
+}
+
+$color_sticker: $color_special_white;
+$color_list_item_border: $color_border_light;
+$color_pdp_item_border: $color_border_light;
+
+// wishlist
+$color_wishlist_list_item_border: #d6d6d6;
+%bg-wishlist-list-item {
+	background-color: #e1e1e1;
+	@include background-image(linear-gradient(#fff 0%, #e1e1e1 100%));
+}
+$color_wishlist_list_item_border_hover: $color_brand;
+%bg-wishlist-list-item-hover {
+	background-color: rgb(29, 99, 161);
+	@include background-image(linear-gradient(rgb(29, 99, 161) 0%, rgb(0, 75, 142) 100%));
+}
+
+// my account
+$color_table_header: rgb(201,201,201);
+$color_table_row: rgb(242,242,242);
+$color_table_row_separator: rgb(188,188,188);

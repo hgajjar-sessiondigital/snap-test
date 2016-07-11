@@ -1,0 +1,33 @@
+/****************************************************************************
+ * INCLUDES ALL THE MODULES (PAGE STYLINGS, BLOCK STYLINGS) IN THE RIGHT ORDER 
+ ****************************************************************************/
+@import "modules/HDM_global";
+@import "modules/HDM_forms";
+@import "modules/HDM_header";
+@import "modules/HDM_footer";
+@import "modules/HDM_slider";
+@import "modules/HDM_colorbox";
+@import "modules/HDM_homepage";
+@import "modules/HDM_productpage";
+@import "modules/HDM_category";
+@import "modules/HDM_toolbar";
+@import "modules/HDM_login_registration";
+@import "modules/HDM_country_selector";
+@import "modules/HDM_registration";
+@import "modules/HDM_shoppingcart";
+@import "modules/HDM_sticky_toolbar";
+@import "modules/HDM_minicart";
+@import "modules/HDM_checkout";
+@import "modules/HDM_myaccount";
+@import "modules/HDM_cms";
+@import "modules/HDM_wishlist";
+@import "modules/HDM_Paymetric";
+@import "modules/HDM_print_screen";
+@import "modules/HDM_offer_request";
+@import "modules/HDM_spare_parts";
+@import "modules/HDM_tooltipster";
+@import "modules/HDM_equipment";
+@import "modules/HDM_datepicker";
+@import "modules/HDM_sessionexpire";
+@import "modules/HDM_color_manager";
+@import "modules/HDM_comparison";
